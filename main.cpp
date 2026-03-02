@@ -18,7 +18,7 @@ void cargaFarmacias(Avl<Farmacia> &af, Vdinamico<Farmacia> &vf) {
 
     std::string ciff, provinciaf, localidadf, nombref, direccionf, codpostalf;
 
-    is.open("../farmacias.csv");
+    is.open("./farmacias.csv");
     if (!is.good()) {
         std::cout << "Error critico: No se pudo abrir el archivo farmacias.csv" << std::endl;
         return;
@@ -105,7 +105,7 @@ int main() {
 
         cout << "Cargando datos de MediExpress (Medicamentos, Labs, Farmacias)..." << endl;
 
-        MediExpress medi("../pa_medicamentos.csv","../lab2.csv","../farmacias.csv");
+        MediExpress medi("./pa_medicamentos.csv","./lab2.csv","./farmacias.csv");
         try {
             string cif[27] = {"37656422V","46316032N", "77092934Q", "33961602D", "B62351861", "B62351861",
                         "B65828113", "46138599R", "35069965W", "37579913Y", "37682300C",
@@ -121,7 +121,7 @@ int main() {
                         cout << "  [OK] Farmacia " << cif[i] << " ya tiene el med 3640" << endl;
                     else {
                          medi.suministrarFarmacia(f,3640);
-                        cout << "  [+] Suministrando med 3640 a Farmacia " << cif[i] << endl;
+                       // cout << "  [+] Suministrando med 3640 a Farmacia " << cif[i] << endl;
                         cont_no++;
                     }
                 }

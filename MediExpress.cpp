@@ -148,7 +148,7 @@ MediExpress::MediExpress(const string &nomFichPaMed, const string &nomFichLab,
              medsSinLaboratorio[i]->lab1()->get_id() << endl;
     }
 
-    //--- MOSTRAR PARA COMPROBAR ---
+  /*  //--- MOSTRAR PARA COMPROBAR ---
     int conteoSinAsignar = 0; // Renombrado
     for (int i=0; i<medication.tamlog(); i++){
         if (medication[i].lab1())
@@ -158,9 +158,10 @@ MediExpress::MediExpress(const string &nomFichPaMed, const string &nomFichLab,
         else
             conteoSinAsignar++;
     }
+            
     // --- COUT MODIFICADO ---
     cout << "Total de medicamentos sin laboratorio: " << conteoSinAsignar << endl;
-
+*/
 //--- SEGUNDA LECTURA DEL TERCER FICHERO ---
     Vdinamico<string> vectorDeCifs; // Renombrado
     registros=0;
