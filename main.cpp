@@ -1,171 +1,155 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <chrono>
 
-#include "ListaEnlazada.h"
-#include "Laboratorio.h"
+#include "Avl.h"
 #include "MediExpress.h"
-#include "PaMedicamento.h"
-#include "Vdinamico.h"
-
-/**  @author Alejandro Barranco Rivera abr00070@red.ujaen.es */
 
 
-void mostrarLista_confor(ListaEnlazada<int> &lista) {
+using namespace std;
 
-    for (ListaEnlazada<int>::Iterador it = lista.iterador();!it.fin();it.siguiente()) {
-        cout << it.dato() << ",";
+void cargaFarmacias(Avl<Farmacia> &af, Vdinamico<Farmacia> &vf) {
+    std::ifstream is;
+    std::stringstream columnas;
+    std::string fila;
+    int contador = 0;
+
+    std::string ciff, provinciaf, localidadf, nombref, direccionf, codpostalf;
+
+    is.open("../farmacias.csv");
+    if (!is.good()) {
+        std::cout << "Error critico: No se pudo abrir el archivo farmacias.csv" << std::endl;
+        return;
     }
-    cout << endl;
-}
-void mostrarLista(ListaEnlazada<int> &lista) {
-    ListaEnlazada<int>::Iterador it = lista.iterador();
-    while (!it.fin()) {
-        cout << it.dato() << ",";
-        it.siguiente();
+
+    // Descartar la primera fila (cabeceras)
+    getline(is, fila);
+
+    while (getline(is, fila)) {
+        if (fila.empty()) continue;
+
+        columnas.clear();
+        columnas.str(fila);
+
+        getline(columnas, ciff, ';');
+        getline(columnas, provinciaf, ';');
+        getline(columnas, localidadf, ';');
+        getline(columnas, nombref, ';');
+        getline(columnas, direccionf, ';');
+        getline(columnas, codpostalf, '\r');
+
+        Farmacia datof(ciff, provinciaf, localidadf, nombref, direccionf, codpostalf, 0);
+
+        af.inserta(datof);
+        vf.insertar(datof);
+        contador++;
     }
-    cout << endl;
+
+    is.close();
+
+    cout << "Proceso de carga finalizado. Se han procesado " << contador << " registros de farmacias." << endl;
 }
 
 int main() {
-
     try {
+        // --- PRUEBA 1: Comparativa de Rendimiento AVL vs Vector ---
+        clock_t t_ini;
 
-        //PRUEBA1: Probando lista de enteros
-        ListaEnlazada<int> lista;
-        for (int i = 101; i <= 200; i++)
-            lista.insertarFin(i);
-        mostrarLista(lista);
+        Avl<Farmacia> afarma;
+        Vdinamico<Farmacia> vfarma;
+        cargaFarmacias(afarma, vfarma);
 
-        for (int i = 98; i >= 1; i--)
-            lista.insertarInicio(i);
-        mostrarLista(lista);
-
-        ListaEnlazada<int>::Iterador it = lista.iterador();
-        while (it.dato() != 101) {
-            it.siguiente();
-        }
-        lista.insertaDelante(it, 100);
-        mostrarLista(lista);
-
-        ListaEnlazada<int>::Iterador it1 = lista.iterador();
-        while (it.dato() != 101) {
-            it.siguiente();
-        }
-        lista.insertaDelante(it, 100);
-        mostrarLista(lista);
-
-        ListaEnlazada<int>::Iterador it2 = lista.iterador();
-        while (it2.dato() != 98) {
-            it2.siguiente();
+        Vdinamico<string> aux;
+        for (int i=0; i<vfarma.tamlog() && i<500; i++){
+            aux.insertar(vfarma[i].getCif());
         }
 
-        lista.insertaDetras(it2, 99);
-        mostrarLista(lista);
-
-        for (int i = 0; i < 10; i++) {
-            lista.borrarInicio();
-        }
-        mostrarLista(lista);
-
-        for (int i = 0; i < 10; i++) {
-            lista.borrarFinal();
-        }
-        mostrarLista(lista);
-        ListaEnlazada<int>::Iterador itborrado=lista.iterador();
-        while (!it.fin()) {
-            if (it.dato() % 10 == 0) {
-                itborrado = it;
-                itborrado.siguiente();
-                lista.borra(it);
-                it = itborrado;
-            } else
-                it.siguiente();
+        Farmacia dato;
+        t_ini = clock();
+        for (int i=0; i<aux.tamlog(); i++){
+            dato.setCif(aux[i]);
+            afarma.buscaRec(dato);
         }
 
-        cout << "PRUEBA1: LISTA FINAL:" << endl;
-        mostrarLista(lista);
+        cout << endl << "Rendimiento AVL (clock): " << ((clock() - t_ini) / (float)CLOCKS_PER_SEC) << " segs." << endl;
 
-    }catch (std::bad_alloc &e){
-        std::cerr << "No hay memoria suficiente." << std::endl;
-    }
+        t_ini = clock();
+        auto start= std::chrono::high_resolution_clock::now();
+        for (int i=0; i<aux.tamlog(); i++){
+            bool enc=false;
+            for (int j=0; j<vfarma.tamlog() && !enc; j++) {
+                if (aux[i] == vfarma[j].getCif())
+                    enc = true;
+            }
+        }
+        auto end= std::chrono::high_resolution_clock::now();
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+        cout << "Rendimiento V. Dinamico (chrono): " << elapsed.count() << " ms\n";
+        cout << "Rendimiento V. Dinamico (clock): " << ((clock() - t_ini) / (float)CLOCKS_PER_SEC)*1000 << " segs." << endl;
 
+        // Estadísticas del Árbol AVL
+        cout << "\n--- Estadisticas del Arbol ---" << endl;
+        cout << "Estadisticas del Arbol: Altura -> " << afarma.altura() << endl;
+        cout << "Estadisticas del Arbol: Nodos -> " << afarma.numElementos() << endl;
 
-    cout << endl << "PRUEBA2: MediExpress:" << endl;
-
-    cout << "Comienzo de lectura de ficheros y carga de DATOS " << endl;
-
-    MediExpress medi("../pa_medicamentos.csv","../lab2.csv");
-    char c;
-    try {
-        //laboratorios granada
-        Vdinamico<Laboratorio*> granada= medi.buscarLabCiudad("Granada");
-        for (int i=0; i<granada.tamlog(); i++){
-            cout << "id_Lab=" << granada[i]->get_id() << " Nombre=" <<
-                granada[i]->get_nombre_lab() << " Direccion=" <<
-                granada[i]->get_direccion_lab()  << " " <<
-                granada[i]->get_localidad()  << endl;
+        Vdinamico<Farmacia*> v= afarma.recorreInorden();
+        cout << "\nRecorrido Inorden (Primeros 100):" << endl;
+        for (int i=0; i<v.tamlog() && i<100; i++) {
+            cout << "  - Nodo: [CIF: " << v[i]->getCif() << "]" << endl;
         }
 
-        //laboratorios jaen
-        Vdinamico<Laboratorio*> jaen= medi.buscarLabCiudad("Jaen");
-        cout << "Total Lab. en jaen:" << jaen.tamlog() << endl;
+        //  PRUEBA 2: Lógica de MediExpress
+        cout << endl << "\n--- Iniciando Prueba 2: Funcionalidad MediExpress ---" << endl;
 
-        //laboratorios madrid
-        Vdinamico<Laboratorio*> madrid= medi.buscarLabCiudad("Madrid");
-        cout << "Total Lab. en madrid:" << madrid.tamlog() << endl;
-        for (int i=0; i<madrid.tamlog() && i<10; i++){
-            cout << "id_Lab=" << madrid[i]->get_id() << " Nombre=" <<
-            madrid[i]->get_nombre_lab() << " Direccion=" <<
-            madrid[i]->get_direccion_lab()  << endl;
-        }
+        cout << "Cargando datos de MediExpress (Medicamentos, Labs, Farmacias)..." << endl;
 
-        //laboratorios q suministran ACEITES
-        Vdinamico<PaMedicamento*> aceites= medi.buscarCompuesto("ACEITE");
-        Vdinamico<Laboratorio*> laboAceite;
-        for (int i = 0; i < aceites.tamlog(); i++) {
-            // CORREGIDO: Usamos getLaboratorio() y comprobamos que no sea nulo.
-            Laboratorio* lab = aceites[i]->lab1();
-            if (lab) { // Si el laboratorio existe (no es nullptr)
-                int id = lab->get_id();
-                bool enc = false;
-                for (int j = 0; j < laboAceite.tamlog() && !enc; j++) {
-                    if (id == laboAceite[j]->get_id())
-                        enc = true;
+        MediExpress medi("../pa_medicamentos.csv","../lab2.csv","../farmacias.csv");
+        try {
+            string cif[27] = {"37656422V","46316032N", "77092934Q", "33961602D", "B62351861", "B62351861",
+                        "B65828113", "46138599R", "35069965W", "37579913Y", "37682300C",
+                        "37643742X", "46112335A", "47980171D", "38116138D", "46315600V",
+                        "37640233C", "37931842N", "33964303L", "35022080A", "B66046640",
+                        "E66748344", "47640201W", "B66621954", "46121385Z", "X6806622W","46046390E"};
+
+            int cont_no=0;
+            for (int i=0; i<27; i++) {
+                Farmacia* f=medi.buscarFarmacia(cif[i]);
+                if (f) {
+                    if (f->buscaMedicam(3640))
+                        cout << "  [OK] Farmacia " << cif[i] << " ya tiene el med 3640" << endl;
+                    else {
+                         medi.suministrarFarmacia(f,3640);
+                        cout << "  [+] Suministrando med 3640 a Farmacia " << cif[i] << endl;
+                        cont_no++;
+                    }
                 }
-                if (!enc)
-                    laboAceite.insertar(lab);
             }
-        }
-        cout << endl << "Laboratorios que elaboran ACEITES:" << endl;
-        for (int i=0; i<laboAceite.tamlog(); i++)
-        {
-            cout << "id_Lab=" << laboAceite[i]->get_id() << " Nombre=" <<
-            laboAceite[i]->get_nombre_lab() << " Direccion=" <<
-            laboAceite[i]->get_direccion_lab()  << endl;
-        }
-
-        //Medicamentos sin laboratorio
-        Vdinamico<PaMedicamento*> sin= medi.PaMedSinLab();
-        cout << "Total PaMedic. sin Laboratorio:" << sin.tamlog() << endl;
-
-        for (int i=0; i<madrid.tamlog() && i<sin.tamlog(); i++){
-            // cout << i << endl;
-            medi.suministrarMed(sin[i],madrid[i]);
-            // sin[i]->servidoPor(madrid[i]);
-            Laboratorio* lab_asignado = sin[i]->lab1();
-            if (lab_asignado) {
-                cout << "Id_PaMed=" << sin[i]->get_id_num() << " Laboratorio asig.=" <<
-                     lab_asignado->get_id() << endl;
+            cout << "\nConteo de farmacias sin stock (Antes): " << cont_no << endl;
+            cont_no=0;
+            for (int i=0; i<27; i++) {
+                Farmacia* f=medi.buscarFarmacia(cif[i]);
+                if (f) {
+                    if (!f->buscaMedicam(3640))
+                        cont_no++;
+                }
             }
+            cout << "Conteo de farmacias sin stock (Despues): " << cont_no << endl;
+
+            Vdinamico<Laboratorio*> vlab=medi.buscarLabs("MAGNESIO");
+            Avl<Laboratorio*> alab;
+            for (int i=0; i<vlab.tamlog(); i++) {
+                alab.inserta(vlab[i]);
+            }
+            cout << "\nMedicamentos encontrados para 'MAGNESIO': " << vlab.tamlog() << endl;
+            cout << "Laboratorios unicos que lo suministran: " << alab.numElementos() << endl;
+
+
+        }catch (std::bad_alloc &e) {
+            std::cerr << "Error fatal: Memoria insuficiente (en Prueba 2)." << std::endl;
         }
-        cout << endl << "FIN DE LA APLICACION....";
-    }catch (std::out_of_range &e){
-    std::cerr << e.what() << std::endl;
-    }catch (std::runtime_error &e){ //std::ifstream::failure &e){
-    std::cerr << "Excepcion en fichero: " << e.what() << std::endl;
-    }catch (std::bad_alloc &e){
-    std::cerr << "No hay memoria suficiente para el objeto dinamico" << std::endl;
+    }catch (std::bad_alloc &e) {
+        std::cerr << "Error fatal: Memoria insuficiente (en Main)." << std::endl;
     }
-
-
-    return 0;
-    }
+}

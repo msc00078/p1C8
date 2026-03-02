@@ -2,7 +2,11 @@
 #ifndef PR1EEDD_PAMEDICAMENTO_H
 #define PR1EEDD_PAMEDICAMENTO_H
 
-#include "Laboratorio.h"
+#include <string>
+
+class Laboratorio;
+class Farmacia;
+
 
 using namespace std;
 
@@ -99,11 +103,11 @@ public:
     bool operator<(const PaMedicamento& otro) const {
         return this->id_num < otro.get_id_num();
     }
+
     bool servidoPor( Laboratorio& l)  {
         if (lab == nullptr) {
             return false;
         }
-        // Comparamos los IDs de ambos laboratorios.
         return lab->get_id() == l.get_id();
     }
 

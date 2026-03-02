@@ -37,7 +37,8 @@ public:
     unsigned long int capacity() const { return tamaf; }
 
 
-T &operator[](unsigned long int pos);
+    T &operator[](unsigned long int pos);
+
 };
 
 

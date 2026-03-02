@@ -1,8 +1,9 @@
 #ifndef PR2EEDD_LABORATORIO_H
 #define PR2EEDD_LABORATORIO_H
 #include <string>
+#include "VDinamico.h"
 
-
+class PaMedicamento;
 class Laboratorio {
 
     int id;
@@ -10,6 +11,7 @@ class Laboratorio {
     std::string direccionLab;
     std::string codPostal;
     std::string localidad;
+    Vdinamico<PaMedicamento*> labs;
 
 public:
     Laboratorio(int id, const std::string &nombre_lab, const std::string &direccion_lab, const std::string &cod_postal,

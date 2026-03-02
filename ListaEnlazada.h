@@ -1,17 +1,17 @@
-#ifndef LISTAS_H_INCLUDED;
+#ifndef LISTAS_H_INCLUDED
 #define LISTAS_H_INCLUDED
 
 using namespace std;
 #include <iostream>
 
 template<class T>
-class Nodo {
+class NodoL {
 
 public:
     T dato;
-    Nodo *sig;
-    Nodo(const T &aDato, Nodo *aSig = 0):dato(aDato), sig(aSig) {}
-    ~Nodo() {}
+    NodoL *sig;
+    NodoL(const T &aDato, NodoL *aSig = 0):dato(aDato), sig(aSig) {}
+    ~NodoL() {}
 };
 
 template<class T>
@@ -19,7 +19,7 @@ class ListaEnlazada {
 
 //declaracion del Nodo local
 
-    Nodo<T> *cabecera, *cola;
+    NodoL<T> *cabecera, *cola;
     unsigned tama;
 
 public:
@@ -27,11 +27,11 @@ public:
     //IMPLEMENTACION DEL ITERADOR
     template <class U>
     class Iterador {
-        Nodo<U> *nodo;
+        NodoL<U> *nodo;
     public:
         friend class ListaEnlazada<U>;
 
-        Iterador(Nodo<U> *aNodo=0) : nodo(aNodo) {}
+        Iterador(NodoL<U> *aNodo=0) : nodo(aNodo) {}
 
         bool fin() { return nodo == 0; }
 
@@ -81,14 +81,14 @@ ListaEnlazada<T>::Iterador<T> ListaEnlazada<T>::iterador() const{
 //CONSTRUCTOR DE COPIA
 template<class T>
 ListaEnlazada<T>::ListaEnlazada(const ListaEnlazada<T> &l){
-    Nodo<T> *i= l.cabecera;
+    NodoL<T> *i= l.cabecera;
     cabecera=0;
     cola=0;
     tama=l.tama;
 
     while (i){
-         Nodo<T> *nuevo;
-         nuevo = new Nodo<T>(i->dato, 0);
+         NodoL<T> *nuevo;
+         nuevo = new NodoL<T>(i->dato, 0);
          if (cola != 0)
              cola->sig = nuevo;
          // Caso especial: si la lista estaba vac a, poner la cabecera apuntando al nodo
@@ -111,7 +111,7 @@ ListaEnlazada<T> &ListaEnlazada<T>::operator=(const ListaEnlazada<T> &l){
 
     if (this!=&l){
         if (cabecera) {
-              Nodo<T> *borra= cabecera;
+              NodoL<T> *borra= cabecera;
               while ( borra ){
                   cabecera= cabecera->sig;
                   delete borra;
@@ -119,14 +119,14 @@ ListaEnlazada<T> &ListaEnlazada<T>::operator=(const ListaEnlazada<T> &l){
               }
               cola = 0;
         }
-        Nodo<T> *i= l.cabecera;
+        NodoL<T> *i= l.cabecera;
         cabecera=0;
         cola=0;
         tama=l.tama;
 
         while (i){
-             Nodo<T> *nuevo;
-             nuevo = new Nodo<T>(i->dato, 0);
+             NodoL<T> *nuevo;
+             nuevo = new NodoL<T>(i->dato, 0);
              if (cola != 0)
                  cola->sig = nuevo;
              // Caso especial: si la lista estaba vac a, poner la cabecera apuntando al nodo
@@ -142,8 +142,8 @@ ListaEnlazada<T> &ListaEnlazada<T>::operator=(const ListaEnlazada<T> &l){
 
 template<class T>
 void ListaEnlazada<T>::insertarInicio(const T &dato){
-    Nodo<T> *nuevo;
-    nuevo = new Nodo<T>(dato, cabecera);
+    NodoL<T> *nuevo;
+    nuevo = new NodoL<T>(dato, cabecera);
     // Caso especial: si la lista estaba vac a poner la cola apuntando al nodo
     if (cola == 0)
         cola = nuevo;
@@ -154,8 +154,8 @@ void ListaEnlazada<T>::insertarInicio(const T &dato){
 
 template<class T>
 void ListaEnlazada<T>::insertarFin(const T &dato){
-    Nodo<T> *nuevo;
-    nuevo = new Nodo<T>(dato, 0);
+    NodoL<T> *nuevo;
+    nuevo = new NodoL<T>(dato, 0);
 
     if (cola != 0)
         cola->sig = nuevo;
@@ -178,14 +178,14 @@ void ListaEnlazada<T>::insertaDelante(Iterador<T> &p, const T &dato){
         }
 
         ++tama;
-        Nodo<T> *anterior = 0;
+        NodoL<T> *anterior = 0;
 
         anterior = cabecera;
         while (anterior->sig != p.nodo)
             anterior = anterior->sig;
 
-        Nodo<T> *nuevo;
-        nuevo = new Nodo<T>(dato, p.nodo);
+        NodoL<T> *nuevo;
+        nuevo = new NodoL<T>(dato, p.nodo);
         anterior->sig = nuevo;
     }
 }
@@ -194,8 +194,8 @@ template<class T>
 void ListaEnlazada<T>::insertaDetras( Iterador<T> &p,const T &dato){
     if (!p.fin()){
         ++tama;
-        Nodo<T> *nuevo;
-        nuevo = new Nodo<T>(dato, p.nodo->sig);
+        NodoL<T> *nuevo;
+        nuevo = new NodoL<T>(dato, p.nodo->sig);
         p.nodo->sig = nuevo;
         if (p.nodo == cola)
             cola= nuevo;
@@ -207,7 +207,7 @@ void ListaEnlazada<T>::borrarInicio(){
 
     if  (cabecera!=0){
         --tama;
-        Nodo<T> *borrado = cabecera;
+        NodoL<T> *borrado = cabecera;
         cabecera= cabecera->sig;
         delete borrado;
         // Caso especial al borrar el  ltimo nodo
@@ -218,7 +218,7 @@ void ListaEnlazada<T>::borrarInicio(){
 
 template<class T>
 void ListaEnlazada<T>::borrarFinal(){
-    Nodo<T> *anterior = 0;
+    NodoL<T> *anterior = 0;
     if (cabecera != cola) {
         --tama;
         anterior = cabecera;
@@ -241,7 +241,7 @@ void ListaEnlazada<T>::borrarFinal(){
 
 template<class T>
 void ListaEnlazada<T>::borra(Iterador<T> &p){
-    Nodo<T> *anterior;
+    NodoL<T> *anterior;
     if (!p.fin()) {
         --tama;
         if (p.nodo==cabecera){
@@ -264,11 +264,11 @@ template<class T>
 ListaEnlazada<T> ListaEnlazada<T>::concatena(const ListaEnlazada<T> &l){
 
     ListaEnlazada<T> ret(*this);
-    Nodo<T>* p=l.cabecera;
+    NodoL<T>* p=l.cabecera;
     while (p){
-        Nodo<T> *nuevo;
+        NodoL<T> *nuevo;
         ret.tama++;
-        nuevo = new Nodo<T>(p->dato,0);
+        nuevo = new NodoL<T>(p->dato,0);
         // Caso especial: si la lista estaba vac a, poner la cabecera apuntando al nodo
         if (ret.cabecera == 0)
             ret.cabecera = nuevo;
@@ -290,7 +290,7 @@ ListaEnlazada<T> ListaEnlazada<T>::operator+(const ListaEnlazada<T> &l){
 template<class T>
 void ListaEnlazada<T>::destruyeLista(){
     if (cabecera) {
-        Nodo<T> *borra= cabecera;
+        NodoL<T> *borra= cabecera;
         while ( borra ){
             cabecera= cabecera->sig;
             delete borra;

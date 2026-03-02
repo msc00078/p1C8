@@ -1,164 +1,223 @@
 #include "MediExpress.h"
 #include <sstream>
 #include <fstream>
-#include "ListaEnlazada.h"
+#include "VDinamico.h"
+#include <iostream>
+#include "Laboratorio.h"
+#include "Farmacia.h"
+#include "PaMedicamento.h"
+
 
 MediExpress::MediExpress() : medication(), labs() {}
+MediExpress::MediExpress(const string &nomFichPaMed, const string &nomFichLab,
+                         const string &nomFichFar){
+    std::ifstream archivo;
+    std::stringstream streamDeLinea;
+    std::string lineaActual;
+    int registros = 0;
 
-MediExpress::MediExpress(const string &nomFichPaMed, const string &nomFichLab){
-    std::ifstream is;
-    std::stringstream columnas;
-    std::string fila;
-    int contador = 0;
+    // --- Carga de Medicamentos ---
+    int medIdNum = 0;
+    std::string medIdAlpha = "";
+    std::string medNombre = "";
+    std::string idComoString = "";
 
-    int id_num = 0;
-    std::string id_alpha = "";
-    std::string nombre = "";
-    std::string num = "";
+    archivo.open(nomFichPaMed);
+    if (archivo.good()) {
 
-    is.open(nomFichPaMed); //"../pa_medicamentos.csv"
-    if (is.good()) {
+        while (getline(archivo, lineaActual)) {
+            if (lineaActual != "") {
+                streamDeLinea.str(lineaActual);
 
-        while (getline(is, fila)) {
-            //¿Se ha leído una nueva fila?
-            if (fila != "") {
-                columnas.str(fila);
+                getline(streamDeLinea, idComoString, ';');
+                getline(streamDeLinea, medIdAlpha, ';');
+                getline(streamDeLinea, medNombre, ';');
+                medIdNum = stoi(idComoString);
 
+                lineaActual = "";
+                streamDeLinea.clear();
 
-                getline(columnas, num, ';'); //leemos caracteres hasta encontrar y omitir ';'
-                getline(columnas, id_alpha, ';');
-                getline(columnas, nombre, ';');
-                id_num = stoi(num);
-
-                fila = "";
-                columnas.clear();
-
-                PaMedicamento dato(id_num,id_alpha,nombre);
-
-                medication.insertar(dato);
-
-                std::cout << ++contador
-                          << " PActivo: ( id_num=" << id_num
-                          << " id_alpha=" << id_alpha << " nombre=" << nombre
-                          << ")" << std::endl;
+                PaMedicamento nuevoMedicamento(medIdNum, medIdAlpha, medNombre);
+                medication.insertar(nuevoMedicamento);
             }
         }
-        is.close();
+        archivo.close();
     } else {
-        std::cout << "Error de apertura en archivo" << std::endl;
+        std::cout << "Error critico al abrir el archivo de medicamentos: " << nomFichPaMed << std::endl;
     }
 
-    //SEGUNDO FICHERO
+    //--- SEGUNDO FICHERO (Laboratorios) ---
 
-    int id = 0;
-    std::string nombrelab = "";
-    std::string direccion = "";
-    std::string cp = "";
-    std::string localidad = "";
+    int labId = 0;
+    std::string labNombre = "";
+    std::string labDireccion = "";
+    std::string labCP = "";
+    std::string labLocalidad = "";
 
-    is.open(nomFichLab);
-    if (is.good()) {
+    archivo.open(nomFichLab);
+    if (archivo.good()) {
 
-        while (getline(is, fila)) {
-            //¿Se ha leído una nueva fila?
-            if (fila != "") {
-                columnas.str(fila);
+        while (getline(archivo, lineaActual)) {
+            if (lineaActual != "") {
+                streamDeLinea.str(lineaActual);
 
-                getline(columnas, num, ';'); //leemos caracteres hasta encontrar y omitir ';'
-                getline(columnas, nombre, ';');
-                getline(columnas, direccion, ';');
-                getline(columnas, cp, ';');
-                getline(columnas, localidad, '\r');
-                //localidad[localidad.length()-1]=' ';
-                id_num = stoi(num);
+                getline(streamDeLinea, idComoString, ';');
+                getline(streamDeLinea, labNombre, ';');
+                getline(streamDeLinea, labDireccion, ';');
+                getline(streamDeLinea, labCP, ';');
+                getline(streamDeLinea, labLocalidad, '\r');
 
-                fila = "";
-                columnas.clear();
+                labId = stoi(idComoString);
+                lineaActual = "";
+                streamDeLinea.clear();
 
-                Laboratorio dato(id_num,nombre,direccion,cp,localidad);
+                Laboratorio nuevoLaboratorio(labId, labNombre, labDireccion, labCP, labLocalidad); // Renombrado
                 //buscar posicion ordenada por id
-                ListaEnlazada<Laboratorio>::Iterador<Laboratorio> it=labs.iterador();
-                while (!it.fin() && it.dato().get_id()<id_num){
+                ListaEnlazada<Laboratorio>::Iterador it=labs.iterador();
+                while (!it.fin() && it.dato().get_id() < labId){ // Renombrado
                     it.siguiente();
                 }
-                labs.insertaDelante(it,dato);
-
-                std::cout << ++contador
-                          << " Id_Lab: ( id_num=" << id_num
-                          << " nombre=" << nombre << " direccion=" << direccion
-                          << " codPostal=" << cp << " localidad=" << localidad
-                          << ")" << std::endl;
+                labs.insertaDelante(it, nuevoLaboratorio);
             }
         }
-        is.close();
+        archivo.close();
     } else {
-        std::cout << "Error de apertura en archivo" << std::endl;
+        std::cout << "Error critico al abrir el archivo de laboratorios: " << nomFichLab << std::endl;
     }
 
-    //MOSTRAMOS LISTA ORDENADA POR ID_LAB
-    cout << "Mostramos lista laboratorios: " << endl;
-    ListaEnlazada<Laboratorio>::Iterador<Laboratorio> it=labs.iterador();
-    while (!it.fin() ){
-        cout << "id_lab=" << it.dato().get_id() << endl;
-        it.siguiente();
-    }
-    cout << "Fin lista laboratorios. Total: " << labs.tam() << endl;
 
-    //ENLAZAMOS CADA 2 PAMEDIC. CON UN LABORATORIO
+    //--- TERCER FICHERO (Farmacias) ---
 
-    ListaEnlazada<Laboratorio>::Iterador<Laboratorio> itl = labs.iterador();
-    int i = 0; // Índice para los medicamentos
+    std::string farmCIF = "";
+    std::string farmProvincia = "";
+    std::string farmLocalidad = "";
+    std::string farmNombre = "";
+    std::string farmDireccion= "";
+    std::string farmCodPostal= "";
 
-    // Itera mientras queden laboratorios Y medicamentos
-    while (!itl.fin() && i < medication.tamlog()) {
+    archivo.open(nomFichFar);
+    if (archivo.good()) {
 
-        // 1. Obtén el laboratorio actual UNA SOLA VEZ
-        Laboratorio* labActual = &itl.dato();
+        while (getline(archivo, lineaActual)) {
+            if (lineaActual != "") {
+                streamDeLinea.str(lineaActual);
 
-        // 2. Asigna el primer medicamento (medication[i])
-        suministrarMed(&medication[i], labActual);
-        i++; // Avanza al siguiente medicamento
+                getline(streamDeLinea, farmCIF, ';');
+                getline(streamDeLinea, farmProvincia, ';');
+                getline(streamDeLinea, farmLocalidad, ';');
+                getline(streamDeLinea, farmNombre, ';');
+                getline(streamDeLinea, farmDireccion, ';');
+                getline(streamDeLinea, farmCodPostal, '\r');
 
-        // 3. Comprueba si queda otro medicamento para asignar
-        if (i < medication.tamlog()) {
-            // Asigna el segundo medicamento (medication[i+1]) AL MISMO LABORATORIO
-            suministrarMed(&medication[i], labActual);
-            i++; // Avanza al siguiente medicamento
+                lineaActual = "";
+                streamDeLinea.clear();
+
+                Farmacia nuevaFarmacia(farmCIF, farmProvincia, farmLocalidad, farmNombre, farmDireccion, farmCodPostal, this); // Renombrado
+                pharmacy.inserta(nuevaFarmacia);
+
+                // --- COUT MODIFICADO ---
+                std::cout << "Farma [Registro " << ++registros
+                          << "] CIF=" << farmCIF
+                          << ", Nombre=" << farmNombre
+                          << ", Localidad=" << farmLocalidad << std::endl;
+            }
         }
-
-        // 4. Ahora sí, avanza al siguiente laboratorio
-        itl.siguiente();
+        archivo.close();
+    } else {
+        std::cout << "Error critico al abrir el archivo de farmacias: " << nomFichFar << std::endl;
     }
 
-    //MOSTRAR PARA COMPROBAR
-    cout << "\n--- Comprobando enlaces ---" << endl;
-    int cont = 0;
-    for (int i = 0; i < medication.tamlog(); i++) {
-        // CAMBIO: Usamos el GETTER para obtener el laboratorio
-        Laboratorio* labAsignado = medication[i].lab1();
-        if (labAsignado != nullptr) {
-            cout << "PaMedicamento: " << medication[i].get_id_num()
-                 << " es servido por Laboratorio: " << labAsignado->get_id() << endl;
-        } else {
-            cont++;
+    //--- ENLAZAMOS CADA 2 PAMEDIC. CON UN LABORATORIO ---
+
+    ListaEnlazada<Laboratorio>::Iterador iteradorLab = labs.iterador(); // Renombrado
+    for (int i=0; i<medication.tamlog() && !iteradorLab.fin(); i+=2){
+        suministrarMed(&medication[i], &iteradorLab.dato());
+        iteradorLab.siguiente();
+    }
+
+    //--- laboratorios madrid ---
+    Vdinamico<Laboratorio*> labsEnMadrid = buscarLabCiudad("Madrid"); // Renombrado
+    //--- Medicamentos sin laboratorio ---
+    Vdinamico<PaMedicamento*> medsSinLaboratorio = getMedicamentoSinLab(); // Renombrado
+
+    for (int i=0; i<labsEnMadrid.tamlog() && i<medsSinLaboratorio.tamlog(); i++){
+        suministrarMed(medsSinLaboratorio[i], labsEnMadrid[i]);
+
+        // --- COUT MODIFICADO ---
+        cout << "Enlace [Madrid]: Med ID " << medsSinLaboratorio[i]->get_id_num() << " -> Lab ID " <<
+             medsSinLaboratorio[i]->lab1()->get_id() << endl;
+    }
+
+    //--- MOSTRAR PARA COMPROBAR ---
+    int conteoSinAsignar = 0; // Renombrado
+    for (int i=0; i<medication.tamlog(); i++){
+        if (medication[i].lab1())
+            // --- COUT MODIFICADO ---
+            cout << "  - Verificado: Med " << medication[i].get_id_num() <<
+                 " --enlazado_con--> Lab " << medication[i].lab1()->get_id() << endl;
+        else
+            conteoSinAsignar++;
+    }
+    // --- COUT MODIFICADO ---
+    cout << "Total de medicamentos sin laboratorio: " << conteoSinAsignar << endl;
+
+//--- SEGUNDA LECTURA DEL TERCER FICHERO ---
+    Vdinamico<string> vectorDeCifs; // Renombrado
+    registros=0;
+
+    archivo.open(nomFichFar);
+    if (archivo.good()) {
+
+        while (getline(archivo, lineaActual)) {
+            if (lineaActual != "") {
+                streamDeLinea.str(lineaActual);
+
+                getline(streamDeLinea, farmCIF, ';'); // Reutilizamos farmCIF
+
+                lineaActual = "";
+                streamDeLinea.clear();
+
+                vectorDeCifs.insertar(farmCIF);
+
+                // --- COUT MODIFICADO ---
+                std::cout << " CIF " << ++registros
+                          << ": " << farmCIF << std::endl;
+            }
         }
+        archivo.close();
+        // --- COUT MODIFICADO ---
+        std::cout << "Total de farmacias unicas en sistema: " << pharmacy.numElementos() << endl;
+    } else {
+        // --- COUT MODIFICADO ---
+        std::cout << "Error al releer el archivo de farmacias: " << nomFichFar << std::endl;
     }
-    cout << "Medicamentos sin asignar: " << cont << endl;
+
+    //--- ASOCIAMOS PaMedicamentos a cada farmacia del AVL ---
+    int indiceMedicamento = 0; // Renombrado
+    for (int i=0; i<vectorDeCifs.tamlog(); i++){
+        Farmacia busca;
+        busca.setCif(vectorDeCifs[i]);
+        Farmacia* f=pharmacy.buscaIt(busca);
+        int contadorStock = 0; // Renombrado
+        while (contadorStock < 100){
+            suministrarFarmacia(f, medication[indiceMedicamento].get_id_num());
+            if (indiceMedicamento == medication.tamlog()-1)
+                indiceMedicamento = 0;
+            else
+                indiceMedicamento++;
+            contadorStock++;
+            }
+     }
+
 }
 
-MediExpress::MediExpress(const MediExpress &orig):
-                        medication(orig.medication),
-                        labs(orig.labs)
-                        {}
-
-MediExpress::~MediExpress() {}
 
 void MediExpress::suministrarMed(PaMedicamento *pa, Laboratorio *l){
     if (pa){
         pa->set_lab(l);
     }
 }
-Laboratorio* MediExpress::buscarLab(std::string nombreLab){
+Laboratorio* MediExpress::buscarLab(const string &nombreLab){
     ListaEnlazada<Laboratorio>::Iterador<Laboratorio> it=labs.iterador();
     while (!it.fin()){
         if (it.dato().get_nombre_lab().find(nombreLab) != string::npos)
@@ -169,31 +228,87 @@ Laboratorio* MediExpress::buscarLab(std::string nombreLab){
 }
 
 Vdinamico<Laboratorio*> MediExpress::buscarLabCiudad(const std::string &nombreCiudad) {
-    Vdinamico<Laboratorio*> labor;
+    Vdinamico<Laboratorio*> resultados; // Renombrado
     ListaEnlazada<Laboratorio>::Iterador<Laboratorio> it=labs.iterador();
     while (!it.fin()){
         if (it.dato().get_localidad().find(nombreCiudad) != string::npos)
-            labor.insertar(&it.dato());
+            resultados.insertar(&it.dato());
         it.siguiente();
     }
-    return labor;
+    return resultados;
 }
 
 Vdinamico<PaMedicamento*> MediExpress::buscarCompuesto(const std::string &nombrePA) {
-    Vdinamico<PaMedicamento*> compu;
+    Vdinamico<PaMedicamento*> encontrados; // Renombrado
     for (int i = 0; i < medication.tamlog(); i++) {
         if (medication[i].get_nombre().find(nombrePA) != string::npos) {
-            compu.insertar(&medication[i]);
+            encontrados.insertar(&medication[i]);
         }
     }
-    return compu;
+    return encontrados;
 }
 
-Vdinamico<PaMedicamento*> MediExpress::PaMedSinLab() {
-    Vdinamico<PaMedicamento*> sin;
+Vdinamico<PaMedicamento*> MediExpress::getMedicamentoSinLab() {
+    Vdinamico<PaMedicamento*> sinAsignar; // Renombrado
     for (int i = 0; i < medication.tamlog(); i++) {
         if (!medication[i].lab1())
-            sin.insertar(&medication[i]);
+            sinAsignar.insertar(&medication[i]);
     }
-    return sin;
+    return sinAsignar;
+}
+
+
+PaMedicamento* MediExpress::buscarCompuesto(int id_num) {
+    for (unsigned long i = 0; i < medication.tamlog(); i++) {
+        if (medication[i].get_id_num() == id_num) {
+            return &medication[i];
+        }
+    }
+    return nullptr;
+}
+
+void MediExpress::suministrarFarmacia(Farmacia* f, int id_num) {
+    if (f == nullptr) {
+        return;
+    }
+
+    PaMedicamento* med_encontrado = this->buscarCompuesto(id_num);
+
+    if (med_encontrado != nullptr) {
+        f->dispensaMedicam(med_encontrado);
+    }
+}
+
+Farmacia* MediExpress::buscarFarmacia(const string &cif) {
+    Farmacia temp_busqueda;
+    temp_busqueda.setCif(cif);
+
+    return pharmacy.buscaIt(temp_busqueda);
+}
+
+Vdinamico<Laboratorio*> MediExpress::buscarLabs(const string &nombrePA) {
+    Vdinamico<Laboratorio*> resultadosUnicos; // Renombrado
+
+    for (unsigned long i = 0; i < medication.tamlog(); i++) {
+
+        if (medication[i].get_nombre().find(nombrePA) != string::npos) {
+
+            Laboratorio* lab = medication[i].lab1();
+
+            if (lab != nullptr) {
+                bool esDuplicado = false; // Renombrado
+                for (unsigned long j = 0; j < resultadosUnicos.tamlog(); j++) {
+                    if (resultadosUnicos[j]->get_id() == lab->get_id()) {
+                        esDuplicado = true; // Renombrado
+                        break;
+                    }
+                }
+
+                if (!esDuplicado) { // Renombrado
+                    resultadosUnicos.insertar(lab);
+                }
+            }
+        }
+    }
+    return resultadosUnicos; // Renombrado
 }
