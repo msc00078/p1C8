@@ -1,0 +1,5 @@
+<map id="PaMedicamento::servidoPor" name="PaMedicamento::servidoPor">
+<area shape="rect" id="Node000001" title="Verifica si este medicamento es servido por un laboratorio específico." alt="" coords="5,5,191,32"/>
+<area shape="rect" id="Node000002" href="$class_laboratorio.html#a55e09fd62552b140c8212827c9b14804" title="Obtiene el ID del laboratorio." alt="" coords="239,5,367,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,16,226,19,221,19,191,21"/>
+</map>

@@ -1,3 +1,11 @@
+/**
+ * @file VDinamico.h
+ * @author Asistente de Calidad (assistant@domain.com)
+ * @brief Declaración e implementación de la plantilla de clase Vdinamico.
+ * @version 0.1
+ * @date 2026-03-09
+ * * @copyright Copyright (c) 2026
+ */
 #ifndef VDINAMICO_H
 #define VDINAMICO_H
 
@@ -5,38 +13,105 @@
 #include <iostream>
 #include <algorithm>
 
+/**
+ * @class Vdinamico
+ * @brief Implementa un vector dinámico genérico.
+ * Gestiona de forma automática la memoria dinámica, redimensionando
+ * el espacio de almacenamiento físico según el crecimiento lógico de datos.
+ */
 template<class T>
 class Vdinamico {
 private:
-    T *v;                // Puntero al array de datos
-    unsigned long int tamal;   // Tamaño Lógico (elementos reales)
-    unsigned long int tamaf;   // Tamaño Físico (capacidad del array v)
+    T *v;                      ///< Puntero al array de datos genéricos.
+    unsigned long int tamal;   ///< Tamaño Lógico (número de elementos reales almacenados).
+    unsigned long int tamaf;   ///< Tamaño Físico (capacidad actual de memoria reservada).
 
 
 public:
 
+    /**
+     * @brief Ajusta un tamaño dado a la potencia de 2 inmediatamente superior.
+     * @param tama Referencia al tamaño a ajustar.
+     */
     void tamabase2(unsigned long int &tama);
+
+    /**
+     * @brief Redimensiona el tamaño físico del vector multiplicándolo por 2.
+     */
     void redimensionar();
+
+    /**
+     * @brief Ordena internamente los elementos del vector.
+     */
     void ordenar();
+
+    /**
+     * @brief Inserta un dato en una posición concreta.
+     * @param dato Dato a insertar.
+     * @param pos Posición donde insertar (por defecto al final).
+     */
     void insertar(const T& dato, unsigned int pos = UINT_MAX);
+
+    /**
+     * @brief Devuelve el tamaño lógico actual del vector.
+     * @return unsigned long int Tamaño lógico.
+     */
     unsigned long int tamlog() const;
 
+    /**
+     * @brief Constructor por defecto. Inicializa un vector vacío.
+     */
     Vdinamico();
 
+    /**
+     * @brief Constructor que reserva un tamaño inicial específico.
+     * @param tama Tamaño físico inicial deseado.
+     */
     Vdinamico(unsigned long int tama);
 
+    /**
+     * @brief Constructor de copia.
+     * @param orig Vector dinámico original.
+     */
     Vdinamico(const Vdinamico<T> &orig);
 
+    /**
+     * @brief Constructor parcial que copia un segmento de otro vector.
+     * @param origen Vector origen.
+     * @param inicio Índice desde donde empezar a copiar.
+     * @param num Cantidad de elementos a copiar.
+     */
     Vdinamico(const Vdinamico<T>& origen, unsigned long int inicio, unsigned long int num);
 
+    /**
+     * @brief Destructor del vector dinámico.
+     */
     ~Vdinamico(); 
 
+    /**
+     * @brief Sobrecarga del operador de asignación.
+     * @param arr Vector dinámico a asignar.
+     * @return Vdinamico<T>& Referencia al vector actual.
+     */
     Vdinamico<T> &operator=(const Vdinamico<T> &arr);
     
+    /**
+     * @brief Obtiene el tamaño lógico.
+     * @return unsigned long int Tamaño lógico.
+     */
     unsigned long int size() const { return tamal; }
+
+    /**
+     * @brief Obtiene la capacidad (tamaño físico).
+     * @return unsigned long int Tamaño físico.
+     */
     unsigned long int capacity() const { return tamaf; }
 
-
+    /**
+     * @brief Sobrecarga del operador de acceso.
+     * @param pos Índice del elemento.
+     * @return T& Referencia al elemento en la posición dada.
+     */
     T &operator[](unsigned long int pos);
 
 };
@@ -177,8 +252,5 @@ Vdinamico<T>::~Vdinamico(){
     tamal = 0;
     tamaf = 0;
 }
-
-
-
 
 #endif // VDINAMICO_H

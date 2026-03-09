@@ -1,0 +1,5 @@
+<map id="ListaEnlazada::concatena" name="ListaEnlazada::concatena">
+<area shape="rect" id="Node000001" title="Concatena otra lista al final de la actual devolviendo una nueva lista." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#a203cabce8f626d08e94bae50d2654d1b" title="Constructor por defecto de la lista enlazada." alt="" coords="225,5,418,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,16,212,19,206,19,177,21"/>
+</map>

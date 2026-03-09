@@ -1,0 +1,5 @@
+<map id="PaMedicamento::get_id_num" name="PaMedicamento::get_id_num">
+<area shape="rect" id="Node000001" title="Obtiene el identificador numérico del medicamento." alt="" coords="232,5,373,48"/>
+<area shape="rect" id="Node000002" href="$class_pa_medicamento.html#a3c8504fa77489a15b872dc723ce84140" title="Compara si este medicamento es menor que otro basándose en su ID numérico." alt="" coords="5,13,184,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,27,184,29,184,24,219,26"/>
+</map>

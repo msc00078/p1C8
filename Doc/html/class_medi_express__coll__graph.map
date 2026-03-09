@@ -1,0 +1,29 @@
+<map id="MediExpress" name="MediExpress">
+<area shape="rect" id="Node000001" title="Sistema central de gestión para medicamentos, laboratorios y farmacias. Actúa como la fachada princip..." alt="" coords="272,421,370,448"/>
+<area shape="rect" id="Node000011" href="$class_farmacia.html" title="Gestiona la información y las operaciones de una farmacia. Se encarga de administrar los datos de la ..." alt="" coords="398,520,473,547"/>
+<area shape="poly" id="edge16_Node000011_Node000001" title=" " alt="" coords="344,456,385,494,419,519,413,519,382,498,343,462"/>
+<area shape="rect" id="Node000002" href="$class_vdinamico.html" title=" " alt="" coords="221,323,421,349"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="322,363,324,422,318,420,320,368"/>
+<area shape="rect" id="Node000003" href="$class_pa_medicamento.html" title="Representa un medicamento o principio activo. Gestiona la información básica de un medicamento,..." alt="" coords="263,203,379,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,243,324,323,318,322,320,248"/>
+<area shape="rect" id="Node000005" href="$class_vdinamico.html" title=" " alt="" coords="275,5,484,32"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="333,188,337,178,362,96,377,35,378,30,367,97,342,180,338,190"/>
+<area shape="rect" id="Node000004" href="$class_laboratorio.html" title="Representa a un laboratorio fabricante de medicamentos. Gestiona los datos básicos del laboratorio y ..." alt="" coords="246,104,332,131"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="298,143,320,203,314,202,298,148"/>
+<area shape="rect" id="Node000007" href="$class_nodo_l.html" title=" " alt="" coords="47,203,195,229"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="252,141,145,204,141,200,255,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="345,43,331,58,312,82,298,105,293,102,307,79,327,54,348,39"/>
+<area shape="poly" id="edge15_Node000011_Node000005" title=" " alt="" coords="412,39,446,72,457,93,461,116,461,436,455,483,443,521,438,518,449,482,456,436,456,116,452,95,441,75,412,44"/>
+<area shape="rect" id="Node000006" href="$class_lista_enlazada.html" title=" " alt="" coords="5,323,197,349"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="143,353,294,419,290,422,144,359"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="117,242,106,323,101,322,116,247"/>
+<area shape="rect" id="Node000008" href="$class_nodo_l.html" title="Representa un nodo para la clase ListaEnlazada. Almacena el dato genérico y un puntero al siguiente e..." alt="" coords="76,104,166,131"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="121,144,124,203,118,202,121,149"/>
+<area shape="poly" id="edge10_Node000008_Node000008" title=" " alt="" coords="180,107,193,117,184,126,168,129,164,125,182,122,188,117,182,112"/>
+<area shape="rect" id="Node000009" href="$class_avl.html" title=" " alt="" coords="283,736,402,763"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="338,720,320,450,324,447,343,721"/>
+<area shape="rect" id="Node000010" href="$class_nodo_a_v_l.html" title=" " alt="" coords="358,628,513,655"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="417,666,355,738,352,733,412,667"/>
+<area shape="poly" id="edge13_Node000010_Node000010" title=" " alt="" coords="529,631,539,641,532,650,514,654,513,649,529,646,534,641,528,636"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="437,560,438,629,433,626,434,564"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Vdinamico::Vdinamico" name="Vdinamico::Vdinamico">
+<area shape="rect" id="Node000001" title="Constructor que reserva un tamaño inicial específico." alt="" coords="5,5,157,32"/>
+<area shape="rect" id="Node000002" href="$class_vdinamico.html#a3ebcd36e981143c7ef80356aa4356294" title="Ajusta un tamaño dado a la potencia de 2 inmediatamente superior." alt="" coords="205,5,359,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,16,191,19,186,19,157,21"/>
+</map>

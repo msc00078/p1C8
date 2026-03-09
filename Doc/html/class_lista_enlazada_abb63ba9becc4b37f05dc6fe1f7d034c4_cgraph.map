@@ -1,0 +1,9 @@
+<map id="ListaEnlazada::insertaDelante" name="ListaEnlazada::insertaDelante">
+<area shape="rect" id="Node000001" title="Inserta un dato justo delante del nodo apuntado por el iterador." alt="" coords="5,56,201,83"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada_1_1_iterador.html#a6d6a9bab176641feb1ba81ce0fa0a029" title="Verifica si se ha alcanzado el final de la lista." alt="" coords="253,5,430,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,53,263,35,258,37,170,58"/>
+<area shape="rect" id="Node000003" href="$class_lista_enlazada.html#a88d27f61be8252117967a1d3feae80b1" title="Inserta un dato al final de la lista." alt="" coords="255,56,428,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,67,242,69,237,70,202,72"/>
+<area shape="rect" id="Node000004" href="$class_lista_enlazada.html#afda121b038ae5d86902a0741481d6e4d" title="Inserta un dato al principio de la lista." alt="" coords="249,107,434,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="170,81,263,102,258,104,169,86"/>
+</map>

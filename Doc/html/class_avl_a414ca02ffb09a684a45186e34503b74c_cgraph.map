@@ -1,0 +1,15 @@
+<map id="Avl::inserta" name="Avl::inserta">
+<area shape="rect" id="Node000001" title="Inserta un dato en el árbol AVL." alt="" coords="5,67,93,93"/>
+<area shape="rect" id="Node000002" href="$class_avl.html#a1dfa4f390c92f3e101fe809474302504" title="Busca un dato en el árbol de forma recursiva." alt="" coords="145,29,252,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,67,132,58,128,61,94,72"/>
+<area shape="rect" id="Node000004" href="$class_avl.html#a86d4ef7342224f44de4c5dbe48b558bc" title="Inserción recursiva interna balanceada." alt="" coords="141,104,256,131"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="93,88,130,99,125,101,93,94"/>
+<area shape="rect" id="Node000003" href="$class_avl.html#a96a40367dc3977b97c812ea17a3894d9" title="Búsqueda recursiva interna." alt="" coords="304,29,421,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,40,291,42,286,43,253,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="334,28,329,21,333,11,344,5,363,3,383,5,394,14,389,14,381,10,363,8,346,10,337,15,335,20,339,30"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="172,103,168,95,171,86,181,80,198,77,217,80,227,89,222,89,215,85,198,83,183,85,175,89,173,95,177,104"/>
+<area shape="rect" id="Node000005" href="$class_avl.html#a946067fae6c67de2b5623815b3856cd5" title="Rotación simple a la derecha." alt="" coords="320,92,405,119"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="256,110,308,109,302,110,257,116"/>
+<area shape="rect" id="Node000006" href="$class_avl.html#a508ffe8af0d260977f93a6c7c94df5b1" title="Rotación simple a la izquierda." alt="" coords="322,143,403,169"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="257,128,309,143,304,143,256,134"/>
+</map>

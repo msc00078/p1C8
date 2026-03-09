@@ -1,0 +1,11 @@
+<map id="Farmacia::Farmacia" name="Farmacia::Farmacia">
+<area shape="rect" id="Node000001" title="Constructor por defecto de la clase Farmacia." alt="" coords="200,81,337,108"/>
+<area shape="rect" id="Node000002" href="$class_farmacia.html#a42980de0931204bf28da93442b52c5fa" title="Constructor de copia." alt="" coords="10,5,147,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,75,151,46,121,35,121,30,153,42,225,73"/>
+<area shape="rect" id="Node000003" href="$class_farmacia.html#a6dad481bc5fb050f859250fad20b9f68" title="Sobrecarga del operador menor que, útil para inserción en árboles." alt="" coords="9,56,148,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,84,148,81,148,76,187,83"/>
+<area shape="rect" id="Node000004" href="$class_farmacia.html#a7c5b235fbaec92309c2ee50b3dcba4dd" title="Sobrecarga del operador de asignación." alt="" coords="9,107,148,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="182,107,149,113,147,108,187,105"/>
+<area shape="rect" id="Node000005" href="$class_farmacia.html#a4beab29ddddb63c5dbf307f6d68ac349" title="Sobrecarga del operador de igualdad." alt="" coords="5,157,152,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="226,114,153,148,122,159,120,154,151,143,220,116"/>
+</map>

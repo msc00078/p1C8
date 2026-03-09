@@ -1,0 +1,11 @@
+<map id="ListaEnlazada::borrarInicio" name="ListaEnlazada::borrarInicio">
+<area shape="rect" id="Node000001" title="Borra el primer elemento de la lista." alt="" coords="680,31,856,57"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#ace7da10a951a1f27274665425030b399" title="Borra el nodo apuntado por el iterador." alt="" coords="492,31,632,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="662,44,633,47,633,41,667,44"/>
+<area shape="rect" id="Node000003" href="$class_lista_enlazada.html#acf2f1afddd18fae5cd706197bcac399b" title="Elimina todos los elementos de la lista liberando su memoria." alt="" coords="255,5,444,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,34,444,33,444,27,479,34"/>
+<area shape="rect" id="Node000005" href="$class_lista_enlazada.html#a8ff0a56b0c4f71fb21b4c2b23b99ff42" title="Sobrecarga del operador de asignación." alt="" coords="266,56,432,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="479,54,433,62,433,57,474,54"/>
+<area shape="rect" id="Node000004" href="$class_lista_enlazada.html#a0986ced28b722a53eed0da936a2ab8ae" title="Destructor de la lista enlazada." alt="" coords="5,5,207,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,19,207,21,207,16,242,18"/>
+</map>

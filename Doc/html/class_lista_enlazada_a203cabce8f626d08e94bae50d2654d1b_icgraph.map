@@ -1,0 +1,16 @@
+<map id="ListaEnlazada::ListaEnlazada" name="ListaEnlazada::ListaEnlazada">
+<area shape="rect" id="Node000001" title="Constructor por defecto de la lista enlazada." alt="" coords="461,132,654,159"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#ad656434c2dea01946b17183aaee5e3e9" title="Concatena otra lista al final de la actual devolviendo una nueva lista." alt="" coords="231,5,402,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="524,122,473,89,412,53,367,35,367,30,414,48,476,84,529,122"/>
+<area shape="rect" id="Node000003" href="$class_lista_enlazada.html#a509e04ed71d1195465c98cab4e2cd51a" title="Sobrecarga del operador suma para concatenar listas." alt="" coords="5,31,172,57"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="506,126,412,97,286,72,172,55,172,50,287,66,414,92,511,126"/>
+<area shape="rect" id="Node000004" href="$class_lista_enlazada.html#a1e04f615e6b5bb6e9a9fcf4bf6d67e4f" title="Devuelve un iterador apuntando al inicio de la lista." alt="" coords="239,107,394,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="443,134,394,131,394,125,448,133"/>
+<area shape="rect" id="Node000005" href="$class_lista_enlazada.html#a244eac7f0f04f636081c411bab7b916c" title="Constructor de copia." alt="" coords="220,157,413,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="443,158,414,163,413,158,448,156"/>
+<area shape="rect" id="Node000006" href="$class_lista_enlazada_1_1_iterador.html#a118b61f84ab37c9672dc27732d91fc91" title=" " alt="" coords="239,208,394,251"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="506,163,414,199,381,210,379,205,412,193,501,165"/>
+<area shape="rect" id="Node000007" href="$class_lista_enlazada.html#a8ff0a56b0c4f71fb21b4c2b23b99ff42" title="Sobrecarga del operador de asignación." alt="" coords="233,275,400,301"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="535,169,482,219,449,244,414,265,385,277,384,272,412,260,447,239,479,215,531,171"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="213,31,173,37,171,32,218,28"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Laboratorio::Laboratorio" name="Laboratorio::Laboratorio">
+<area shape="rect" id="Node000001" title="Constructor parametrizado de Laboratorio." alt="" coords="211,81,368,108"/>
+<area shape="rect" id="Node000002" href="$class_laboratorio.html#a375ccbafdc60071d5283f0a0a42dd14a" title="Constructor de copia." alt="" coords="5,5,163,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,76,162,47,130,35,129,30,164,41,244,74"/>
+<area shape="rect" id="Node000003" href="$class_laboratorio.html#a54aa65204a89710f091a3e093bd5a099" title="Constructor de movimiento." alt="" coords="5,56,163,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,84,164,82,163,76,198,82"/>
+<area shape="rect" id="Node000004" href="$class_laboratorio.html#a4fc3c0d06f1dc2a7302d5b32ec981117" title="Sobrecarga del operador de asignación (copia)." alt="" coords="10,107,158,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,107,159,113,158,108,198,105"/>
+<area shape="rect" id="Node000005" href="$class_laboratorio.html#abf7e6c642b11390565674d4436482d28" title="Sobrecarga del operador de asignación (movimiento)." alt="" coords="10,157,158,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="244,114,164,148,130,159,129,154,162,143,239,115"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ListaEnlazada::iterador" name="ListaEnlazada::iterador">
+<area shape="rect" id="Node000001" title="Devuelve un iterador apuntando al inicio de la lista." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#a203cabce8f626d08e94bae50d2654d1b" title="Constructor por defecto de la lista enlazada." alt="" coords="208,5,401,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,16,194,19,189,19,160,21"/>
+</map>

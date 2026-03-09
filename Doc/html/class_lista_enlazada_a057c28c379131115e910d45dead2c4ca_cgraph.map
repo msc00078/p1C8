@@ -1,0 +1,5 @@
+<map id="ListaEnlazada::insertaDetras" name="ListaEnlazada::insertaDetras">
+<area shape="rect" id="Node000001" title="Inserta un dato justo detrás del nodo apuntado por el iterador." alt="" coords="5,5,195,32"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada_1_1_iterador.html#a6d6a9bab176641feb1ba81ce0fa0a029" title="Verifica si se ha alcanzado el final de la lista." alt="" coords="243,5,420,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,16,229,19,224,19,195,21"/>
+</map>

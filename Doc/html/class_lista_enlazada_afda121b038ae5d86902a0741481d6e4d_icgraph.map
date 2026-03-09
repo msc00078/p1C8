@@ -1,0 +1,5 @@
+<map id="ListaEnlazada::insertarInicio" name="ListaEnlazada::insertarInicio">
+<area shape="rect" id="Node000001" title="Inserta un dato al principio de la lista." alt="" coords="249,5,434,32"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#abb63ba9becc4b37f05dc6fe1f7d034c4" title="Inserta un dato justo delante del nodo apuntado por el iterador." alt="" coords="5,5,201,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,19,201,21,201,16,236,19"/>
+</map>

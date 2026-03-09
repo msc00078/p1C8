@@ -1,0 +1,13 @@
+<map id="Laboratorio.h" name="Laboratorio.h">
+<area shape="rect" id="Node000001" title="Declaración de la clase Laboratorio." alt="" coords="46,5,142,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="18,80,71,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,35,64,68,59,66,87,30"/>
+<area shape="rect" id="Node000003" href="$_v_dinamico_8h.html" title="Declaración e implementación de la plantilla de clase Vdinamico." alt="" coords="95,80,191,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,30,129,67,123,67,102,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,155,84,181"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="129,107,75,148,72,143,123,108"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="108,155,179,181"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="145,105,146,140,141,138,141,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="203,155,278,181"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="161,105,214,145,209,146,159,110"/>
+</map>

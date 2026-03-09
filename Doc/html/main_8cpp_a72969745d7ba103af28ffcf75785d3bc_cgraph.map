@@ -1,0 +1,21 @@
+<map id="cargaFarmacias" name="cargaFarmacias">
+<area shape="rect" id="Node000001" title="Carga los datos de farmacias desde un archivo CSV. Inserta los datos leídos tanto en un Árbol AVL com..." alt="" coords="5,129,120,156"/>
+<area shape="rect" id="Node000002" href="$class_avl.html#a414ca02ffb09a684a45186e34503b74c" title="Inserta un dato en el árbol AVL." alt="" coords="191,104,278,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,132,178,125,173,127,121,137"/>
+<area shape="rect" id="Node000008" href="$class_vdinamico.html#ac90bbd8167952732b984b9527203e8c9" title="Inserta un dato en una posición concreta." alt="" coords="168,155,301,181"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="120,148,155,156,150,156,120,154"/>
+<area shape="rect" id="Node000003" href="$class_avl.html#a1dfa4f390c92f3e101fe809474302504" title="Busca un dato en el árbol de forma recursiva." alt="" coords="381,29,488,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,101,348,66,367,62,372,60,350,70,266,106"/>
+<area shape="rect" id="Node000005" href="$class_avl.html#a86d4ef7342224f44de4c5dbe48b558bc" title="Inserción recursiva interna balanceada." alt="" coords="377,104,492,131"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="278,115,364,117,359,118,279,120"/>
+<area shape="rect" id="Node000004" href="$class_avl.html#a96a40367dc3977b97c812ea17a3894d9" title="Búsqueda recursiva interna." alt="" coords="568,29,686,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="489,40,555,42,550,43,489,45"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="594,28,588,21,592,11,606,5,627,3,650,5,664,14,658,14,648,10,627,8,607,10,596,15,594,20,599,30"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="402,103,396,95,400,86,413,79,435,77,458,80,471,89,466,88,456,85,435,83,415,85,404,89,401,95,407,105"/>
+<area shape="rect" id="Node000006" href="$class_avl.html#a946067fae6c67de2b5623815b3856cd5" title="Rotación simple a la derecha." alt="" coords="585,92,669,119"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="493,111,572,109,567,109,493,116"/>
+<area shape="rect" id="Node000007" href="$class_avl.html#a508ffe8af0d260977f93a6c7c94df5b1" title="Rotación simple a la izquierda." alt="" coords="586,143,668,169"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="493,126,574,145,569,145,493,132"/>
+<area shape="rect" id="Node000009" href="$class_vdinamico.html#abcc82f4ec551a955f63667ebb07bc062" title="Redimensiona el tamaño físico del vector multiplicándolo por 2." alt="" coords="349,155,520,181"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="301,165,336,168,331,168,302,171"/>
+</map>

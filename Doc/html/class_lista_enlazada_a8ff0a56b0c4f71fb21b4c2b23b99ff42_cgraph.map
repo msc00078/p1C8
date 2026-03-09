@@ -1,0 +1,13 @@
+<map id="ListaEnlazada::operator=" name="ListaEnlazada::operator=">
+<area shape="rect" id="Node000001" title="Sobrecarga del operador de asignación." alt="" coords="5,81,172,108"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#ace7da10a951a1f27274665425030b399" title="Borra el nodo apuntado por el iterador." alt="" coords="246,56,386,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,83,233,78,228,79,172,88"/>
+<area shape="rect" id="Node000006" href="$class_lista_enlazada.html#a203cabce8f626d08e94bae50d2654d1b" title="Constructor por defecto de la lista enlazada." alt="" coords="220,107,413,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="172,101,207,107,202,108,172,107"/>
+<area shape="rect" id="Node000003" href="$class_lista_enlazada.html#a8df1af919cdff090c61c4db3bedb8245" title="Borra el último elemento de la lista." alt="" coords="464,5,636,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,53,468,36,473,35,382,58"/>
+<area shape="rect" id="Node000004" href="$class_lista_enlazada.html#a6c2ac59fd9250103eb15b466855dcbda" title="Borra el primer elemento de la lista." alt="" coords="462,56,637,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="387,67,449,69,444,70,387,72"/>
+<area shape="rect" id="Node000005" href="$class_lista_enlazada_1_1_iterador.html#a6d6a9bab176641feb1ba81ce0fa0a029" title="Verifica si se ha alcanzado el final de la lista." alt="" coords="461,107,638,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="382,81,473,103,467,103,381,86"/>
+</map>

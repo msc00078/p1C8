@@ -100,7 +100,7 @@ void Farmacia::pedidoMedicam(int id_num){
 }
 PaMedicamento* Farmacia::buscaMedicam(int id_num){
 
-    for (int i=0; i<dispense.tamlog(); i++){
+    for (size_t i=0; i<dispense.tamlog(); i++){
         if (dispense[i]->get_id_num()==id_num)
             return dispense[i];
     }
@@ -112,9 +112,24 @@ void Farmacia::dispensaMedicam(PaMedicamento *pa){
 
 Vdinamico<PaMedicamento*> Farmacia::buscaMedicamentoNombre(std::string nombre) {
     Vdinamico<PaMedicamento*> v;
-    for (int i=0; i<dispense.tamlog(); i++) {
+    for (size_t i=0; i<dispense.tamlog(); i++) {
         if (dispense[i]->get_nombre().find(nombre)!=string::npos) {
             v.insertar(dispense[i]);
         }
     }return v;
+}
+Farmacia& Farmacia::operator=(const Farmacia& other) {
+    if (this != &other) {   // evitar autoasignación
+        cif = other.cif;
+        provincia = other.provincia;
+        localidad = other.localidad;
+        nombre = other.nombre;
+        direcion = other.direcion;
+        codPostal = other.codPostal;
+
+        dispense = other.dispense;   // copia del Vdinamico
+        linkMedi = other.linkMedi;   // copia del puntero
+    }
+
+    return *this;
 }

@@ -1,0 +1,51 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Función principal del programa. Realiza pruebas de rendimiento comparando estructuras de datos y veri..." alt="" coords="5,333,55,360"/>
+<area shape="rect" id="Node000002" href="$class_avl.html#a59915e8d395fbb186a128ab83dfdd8db" title="Obtiene la altura del árbol." alt="" coords="162,29,242,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="30,333,53,195,74,118,87,87,101,66,122,52,148,44,144,48,124,57,105,70,91,90,79,119,58,197,36,333"/>
+<area shape="rect" id="Node000004" href="$class_farmacia.html#a3720103d14d410cbb067974cf6d590c2" title="Busca un medicamento en el inventario por su ID." alt="" coords="116,80,288,107"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="29,333,32,293,43,237,64,177,80,148,101,123,118,112,115,117,105,127,85,151,69,179,48,238,38,293,34,333"/>
+<area shape="rect" id="Node000005" href="$class_avl.html#a1dfa4f390c92f3e101fe809474302504" title="Busca un dato en el árbol de forma recursiva." alt="" coords="503,195,611,221"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="29,333,34,298,45,252,66,205,82,184,101,167,153,141,208,128,266,125,324,130,380,141,432,155,516,187,511,189,430,160,379,146,324,135,266,130,209,133,154,146,104,172,85,188,70,207,50,253,39,299,35,333"/>
+<area shape="rect" id="Node000007" href="$class_medi_express.html#ae718bb2602abf71edbd46de6d3055734" title="Busca una farmacia registrada en el sistema por su CIF." alt="" coords="103,181,301,208"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="33,332,55,277,75,245,101,218,111,213,108,218,104,222,79,248,60,279,38,334"/>
+<area shape="rect" id="Node000008" href="$class_medi_express.html#a975838488f6cccfeec3335439141d2fb" title="Obtiene una lista de laboratorios que fabrican un principio activo específico." alt="" coords="116,232,288,259"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="40,332,66,303,101,275,130,262,127,267,104,280,70,307,44,334"/>
+<area shape="rect" id="Node000009" href="$main_8cpp.html#a72969745d7ba103af28ffcf75785d3bc" title="Carga los datos de farmacias desde un archivo CSV. Inserta los datos leídos tanto en un Árbol AVL com..." alt="" coords="145,333,259,360"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="54,344,131,345,127,349,57,349"/>
+<area shape="rect" id="Node000010" href="$class_avl.html#a414ca02ffb09a684a45186e34503b74c" title="Inserta un dato en el árbol AVL." alt="" coords="352,283,439,309"/>
+<area shape="poly" id="edge19_Node000001_Node000010" title=" " alt="" coords="53,334,102,319,164,308,227,300,339,295,335,298,228,306,165,313,103,324,57,338"/>
+<area shape="rect" id="Node000014" href="$class_vdinamico.html#ac90bbd8167952732b984b9527203e8c9" title="Inserta un dato en una posición concreta." alt="" coords="490,384,624,411"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="54,355,103,369,202,385,303,393,477,398,473,401,302,399,202,390,102,375,56,360"/>
+<area shape="rect" id="Node000016" href="$class_avl.html#a04fe27d7387667d6d9c1a8288d9f9cf0" title="Obtiene el número de elementos en el árbol." alt="" coords="134,435,270,461"/>
+<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="41,358,70,386,104,414,131,428,126,430,101,418,66,390,43,363"/>
+<area shape="rect" id="Node000017" href="$class_avl.html#a383eb196ebdecb681e6c32713f235d6a" title="Realiza un recorrido Inorden del árbol devolviendo sus elementos." alt="" coords="136,485,268,512"/>
+<area shape="poly" id="edge22_Node000001_Node000017" title=" " alt="" coords="35,358,60,414,79,445,104,471,124,483,119,485,101,475,75,449,55,417,35,363"/>
+<area shape="rect" id="Node000019" href="$class_farmacia.html#a11cacc2c6d9ce85f33bcf0fa2ae73c97" title="Establece el CIF de la farmacia." alt="" coords="143,536,261,563"/>
+<area shape="poly" id="edge26_Node000001_Node000019" title=" " alt="" coords="33,358,41,393,53,437,73,483,87,504,104,522,131,538,126,540,101,526,83,507,69,486,48,439,36,395,33,363"/>
+<area shape="rect" id="Node000020" href="$class_medi_express.html#a034ae0250bc91fefbea0d8449dd38ab8" title="Suministra un medicamento específico a una farmacia." alt="" coords="117,587,286,629"/>
+<area shape="poly" id="edge27_Node000001_Node000020" title=" " alt="" coords="32,358,37,402,47,458,69,519,85,548,105,573,108,577,102,577,101,576,80,551,64,522,42,460,32,402,31,363"/>
+<area shape="rect" id="Node000021" href="$class_vdinamico.html#a2f94180efcfb06dd5a2a8145b7dcc8d3" title="Devuelve el tamaño lógico actual del vector." alt="" coords="137,653,266,680"/>
+<area shape="poly" id="edge28_Node000001_Node000021" title=" " alt="" coords="33,358,43,420,57,505,78,587,91,618,105,639,126,655,120,655,101,643,86,621,73,588,52,506,38,421,33,363"/>
+<area shape="rect" id="Node000003" href="$class_avl.html#a3f134986a816cfd82530938a6cf89bd6" title="Calcula la altura máxima de forma recursiva." alt="" coords="349,29,442,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="241,40,336,41,331,44,244,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="367,29,363,21,366,11,377,5,396,3,415,5,427,13,422,15,413,10,396,8,379,10,370,15,368,20,373,29"/>
+<area shape="rect" id="Node000006" href="$class_avl.html#a96a40367dc3977b97c812ea17a3894d9" title="Búsqueda recursiva interna." alt="" coords="699,195,816,221"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="611,205,685,207,680,209,612,211"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="723,194,717,186,721,176,735,170,757,168,781,171,795,179,790,180,780,176,757,173,736,175,725,180,722,185,728,195"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="255,330,339,310,335,313,257,335"/>
+<area shape="poly" id="edge17_Node000009_Node000014" title=" " alt="" coords="259,351,443,376,478,383,472,384,442,381,260,356"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="421,280,520,228,515,231,424,284"/>
+<area shape="rect" id="Node000011" href="$class_avl.html#a86d4ef7342224f44de4c5dbe48b558bc" title="Inserción recursiva interna balanceada." alt="" coords="499,283,615,309"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="439,293,486,295,481,297,441,299"/>
+<area shape="poly" id="edge14_Node000011_Node000011" title=" " alt="" coords="529,282,524,274,528,264,539,258,557,256,577,259,588,267,583,268,575,264,557,261,540,263,532,268,529,273,534,283"/>
+<area shape="rect" id="Node000012" href="$class_avl.html#a946067fae6c67de2b5623815b3856cd5" title="Rotación simple a la derecha." alt="" coords="715,264,800,291"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="614,288,703,282,698,284,616,293"/>
+<area shape="rect" id="Node000013" href="$class_avl.html#a508ffe8af0d260977f93a6c7c94df5b1" title="Rotación simple a la izquierda." alt="" coords="717,315,798,341"/>
+<area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="615,303,704,318,699,320,615,308"/>
+<area shape="rect" id="Node000015" href="$class_vdinamico.html#abcc82f4ec551a955f63667ebb07bc062" title="Redimensiona el tamaño físico del vector multiplicándolo por 2." alt="" coords="672,384,843,411"/>
+<area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="624,395,659,397,653,398,625,400"/>
+<area shape="rect" id="Node000018" href="$class_avl.html#a8deb5a2fa40cdf847338be08264ea308" title="Recorrido inorden recursivo interno." alt="" coords="350,472,441,499"/>
+<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="267,492,338,488,333,491,269,497"/>
+<area shape="poly" id="edge25_Node000018_Node000014" title=" " alt="" coords="421,469,515,420,520,417,423,474"/>
+<area shape="poly" id="edge24_Node000018_Node000018" title=" " alt="" coords="367,471,363,463,366,454,377,448,396,445,415,448,427,457,422,457,413,453,396,451,379,453,370,457,368,463,373,472"/>
+</map>

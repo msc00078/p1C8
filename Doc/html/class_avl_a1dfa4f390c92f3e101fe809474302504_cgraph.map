@@ -1,0 +1,6 @@
+<map id="Avl::buscaRec" name="Avl::buscaRec">
+<area shape="rect" id="Node000001" title="Busca un dato en el árbol de forma recursiva." alt="" coords="5,29,113,56"/>
+<area shape="rect" id="Node000002" href="$class_avl.html#a96a40367dc3977b97c812ea17a3894d9" title="Búsqueda recursiva interna." alt="" coords="161,29,278,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,40,147,42,142,43,113,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="191,28,187,21,190,11,201,5,219,3,239,5,250,15,245,14,237,10,219,8,203,10,194,15,192,20,196,30"/>
+</map>

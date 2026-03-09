@@ -1,3 +1,11 @@
+/**
+ * @file main.cpp
+ * @author Asistente de Calidad (assistant@domain.com)
+ * @brief Archivo principal que ejecuta y prueba las estructuras de datos (AVL, Vdinamico) y MediExpress.
+ * @version 0.1
+ * @date 2026-03-09
+ * * @copyright Copyright (c) 2026
+ */
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -7,9 +15,12 @@
 #include "Avl.h"
 #include "MediExpress.h"
 
-
-using namespace std;
-
+/**
+ * @brief Carga los datos de farmacias desde un archivo CSV.
+ * Inserta los datos leídos tanto en un Árbol AVL como en un Vector Dinámico.
+ * @param af Referencia al Árbol AVL donde se insertarán las farmacias.
+ * @param vf Referencia al Vector Dinámico donde se insertarán las farmacias.
+ */
 void cargaFarmacias(Avl<Farmacia> &af, Vdinamico<Farmacia> &vf) {
     std::ifstream is;
     std::stringstream columnas;
@@ -52,6 +63,12 @@ void cargaFarmacias(Avl<Farmacia> &af, Vdinamico<Farmacia> &vf) {
     cout << "Proceso de carga finalizado. Se han procesado " << contador << " registros de farmacias." << endl;
 }
 
+/**
+ * @brief Función principal del programa.
+ * Realiza pruebas de rendimiento comparando estructuras de datos y verifica
+ * la lógica del sistema MediExpress.
+ * @return int Código de salida del programa (0 si es exitoso).
+ */
 int main() {
     try {
         // --- PRUEBA 1: Comparativa de Rendimiento AVL vs Vector ---
@@ -62,13 +79,13 @@ int main() {
         cargaFarmacias(afarma, vfarma);
 
         Vdinamico<string> aux;
-        for (int i=0; i<vfarma.tamlog() && i<500; i++){
+        for (size_t i=0; i<vfarma.tamlog() && i<500; i++){
             aux.insertar(vfarma[i].getCif());
         }
 
         Farmacia dato;
         t_ini = clock();
-        for (int i=0; i<aux.tamlog(); i++){
+        for (size_t i=0; i<aux.tamlog(); i++){
             dato.setCif(aux[i]);
             afarma.buscaRec(dato);
         }
@@ -77,9 +94,9 @@ int main() {
 
         t_ini = clock();
         auto start= std::chrono::high_resolution_clock::now();
-        for (int i=0; i<aux.tamlog(); i++){
+        for (size_t i=0; i<aux.tamlog(); i++){
             bool enc=false;
-            for (int j=0; j<vfarma.tamlog() && !enc; j++) {
+            for (size_t j=0; j<vfarma.tamlog() && !enc; j++) {
                 if (aux[i] == vfarma[j].getCif())
                     enc = true;
             }
@@ -96,7 +113,7 @@ int main() {
 
         Vdinamico<Farmacia*> v= afarma.recorreInorden();
         cout << "\nRecorrido Inorden (Primeros 100):" << endl;
-        for (int i=0; i<v.tamlog() && i<100; i++) {
+        for (size_t i=0; i<v.tamlog() && i<100; i++) {
             cout << "  - Nodo: [CIF: " << v[i]->getCif() << "]" << endl;
         }
 
@@ -114,7 +131,7 @@ int main() {
                         "E66748344", "47640201W", "B66621954", "46121385Z", "X6806622W","46046390E"};
 
             int cont_no=0;
-            for (int i=0; i<27; i++) {
+            for (size_t i=0; i<27; i++) {
                 Farmacia* f=medi.buscarFarmacia(cif[i]);
                 if (f) {
                     if (f->buscaMedicam(3640))
@@ -128,7 +145,7 @@ int main() {
             }
             cout << "\nConteo de farmacias sin stock (Antes): " << cont_no << endl;
             cont_no=0;
-            for (int i=0; i<27; i++) {
+            for (size_t i=0; i<27; i++) {
                 Farmacia* f=medi.buscarFarmacia(cif[i]);
                 if (f) {
                     if (!f->buscaMedicam(3640))
@@ -139,7 +156,7 @@ int main() {
 
             Vdinamico<Laboratorio*> vlab=medi.buscarLabs("MAGNESIO");
             Avl<Laboratorio*> alab;
-            for (int i=0; i<vlab.tamlog(); i++) {
+            for (size_t i=0; i<vlab.tamlog(); i++) {
                 alab.inserta(vlab[i]);
             }
             cout << "\nMedicamentos encontrados para 'MAGNESIO': " << vlab.tamlog() << endl;

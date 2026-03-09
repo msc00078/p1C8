@@ -1,0 +1,18 @@
+<map id="Vdinamico::redimensionar" name="Vdinamico::redimensionar">
+<area shape="rect" id="Node000001" title="Redimensiona el tamaño físico del vector multiplicándolo por 2." alt="" coords="708,97,879,124"/>
+<area shape="rect" id="Node000002" href="$class_vdinamico.html#ac90bbd8167952732b984b9527203e8c9" title="Inserta un dato en una posición concreta." alt="" coords="526,97,660,124"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="689,111,660,113,660,108,695,110"/>
+<area shape="rect" id="Node000003" href="$class_farmacia.html#a3d3c712907ea899b03803659e22264e8" title="Busca medicamentos por nombre parcial o total." alt="" coords="282,5,478,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="540,92,436,51,437,46,546,91"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a72969745d7ba103af28ffcf75785d3bc" title="Carga los datos de farmacias desde un archivo CSV. Inserta los datos leídos tanto en un Árbol AVL com..." alt="" coords="111,72,226,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="509,108,226,91,226,86,512,104"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa. Realiza pruebas de rendimiento comparando estructuras de datos y veri..." alt="" coords="5,123,55,149"/>
+<area shape="poly" id="edge9_Node000002_Node000005" title=" " alt="" coords="510,117,55,138,55,132,511,112"/>
+<area shape="rect" id="Node000006" href="$class_avl.html#a8deb5a2fa40cdf847338be08264ea308" title="Recorrido inorden recursivo interno." alt="" coords="335,197,425,224"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="551,131,412,199,410,194,546,131"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="114,107,56,129,54,125,117,102"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="415,182,404,178,380,176,358,178,346,183,343,188,349,198,344,196,338,189,342,179,357,173,380,171,405,173,420,182"/>
+<area shape="rect" id="Node000007" href="$class_avl.html#a383eb196ebdecb681e6c32713f235d6a" title="Realiza un recorrido Inorden del árbol devolviendo sus elementos." alt="" coords="103,185,234,212"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="317,207,235,205,235,200,322,207"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="121,180,55,150,56,144,126,177"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Farmacia::buscaMedicamentoNombre" name="Farmacia::buscaMedicamentoNombre">
+<area shape="rect" id="Node000001" title="Busca medicamentos por nombre parcial o total." alt="" coords="5,5,202,48"/>
+<area shape="rect" id="Node000002" href="$class_vdinamico.html#ac90bbd8167952732b984b9527203e8c9" title="Inserta un dato en una posición concreta." alt="" coords="250,13,383,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,24,237,26,232,27,202,29"/>
+<area shape="rect" id="Node000003" href="$class_vdinamico.html#abcc82f4ec551a955f63667ebb07bc062" title="Redimensiona el tamaño físico del vector multiplicándolo por 2." alt="" coords="431,13,602,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,24,418,27,413,27,384,29"/>
+</map>

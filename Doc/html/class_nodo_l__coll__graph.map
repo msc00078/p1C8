@@ -1,0 +1,6 @@
+<map id="NodoL&lt; T &gt;" name="NodoL&lt; T &gt;">
+<area shape="rect" id="Node000001" title="Representa un nodo para la clase ListaEnlazada. Almacena el dato genérico y un puntero al siguiente e..." alt="" coords="5,104,96,131"/>
+<area shape="rect" id="Node000002" href="$class_nodo_l.html" title="Representa un nodo para la clase ListaEnlazada. Almacena el dato genérico y un puntero al siguiente e..." alt="" coords="5,5,96,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,46,53,104,48,103,48,49"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="111,9,122,19,114,28,97,30,95,25,112,23,117,19,111,14"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="ListaEnlazada::~ListaEnlazada" name="ListaEnlazada::~ListaEnlazada">
+<area shape="rect" id="Node000001" title="Destructor de la lista enlazada." alt="" coords="5,56,207,83"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#acf2f1afddd18fae5cd706197bcac399b" title="Elimina todos los elementos de la lista liberando su memoria." alt="" coords="255,56,444,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,67,241,69,236,70,208,72"/>
+<area shape="rect" id="Node000003" href="$class_lista_enlazada.html#ace7da10a951a1f27274665425030b399" title="Borra el nodo apuntado por el iterador." alt="" coords="492,56,632,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,67,479,69,474,70,444,72"/>
+<area shape="rect" id="Node000004" href="$class_lista_enlazada.html#a8df1af919cdff090c61c4db3bedb8245" title="Borra el último elemento de la lista." alt="" coords="683,5,855,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="619,53,694,37,699,36,620,58"/>
+<area shape="rect" id="Node000005" href="$class_lista_enlazada.html#a6c2ac59fd9250103eb15b466855dcbda" title="Borra el primer elemento de la lista." alt="" coords="681,56,857,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="632,67,668,69,663,69,633,72"/>
+<area shape="rect" id="Node000006" href="$class_lista_enlazada_1_1_iterador.html#a6d6a9bab176641feb1ba81ce0fa0a029" title="Verifica si se ha alcanzado el final de la lista." alt="" coords="680,107,858,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="620,81,699,103,694,102,620,86"/>
+</map>

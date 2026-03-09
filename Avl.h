@@ -1,71 +1,215 @@
+/**
+ * @file Avl.h
+ * @author Asistente de Calidad (assistant@domain.com)
+ * @brief Declaración e implementación de un Árbol AVL genérico.
+ * @version 0.1
+ * @date 2026-03-09
+ * * @copyright Copyright (c) 2026
+ */
 #ifndef PR3EEDD_AVL_H
 #define PR3EEDD_AVL_H
 
 #include "VDinamico.h"
 
-
+/**
+ * @class NodoAVL
+ * @brief Nodo para un árbol binario de búsqueda balanceado (AVL).
+ * Almacena el dato, el balance y los punteros a los hijos izquierdo y derecho.
+ */
 template <class T>
 class NodoAVL
 {
 public:
-    NodoAVL<T> *izq;
-    NodoAVL<T> *der;
-    char bal;
-    T dato;
+    NodoAVL<T> *izq;    ///< Puntero al subárbol izquierdo.
+    NodoAVL<T> *der;    ///< Puntero al subárbol derecho.
+    char bal;           ///< Factor de balanceo del nodo.
+    T dato;             ///< Información almacenada en el nodo.
 
+    /**
+     * @brief Constructor a partir de un dato.
+     * @param ele Dato a almacenar.
+     */
     NodoAVL(const T &ele): izq(0), der(0), bal(0), dato(ele){}
+
+    /**
+     * @brief Constructor de copia de nodo.
+     * @param orig Nodo original a copiar.
+     */
     NodoAVL(const NodoAVL<T> &orig): izq(orig.izq), der(orig.der), bal(orig.bal), dato(orig.dato){}
 };
 
+/**
+ * @class Avl
+ * @brief Representa un Árbol AVL balanceado de elementos genéricos.
+ * Mantiene sus elementos siempre ordenados y balanceados para 
+ * garantizar un acceso, inserción y búsqueda eficientes.
+ */
 template <class T>
 class Avl {
-    NodoAVL<T> *raiz;
-    unsigned int tam;
+    NodoAVL<T> *raiz; ///< Puntero a la raíz del árbol.
+    unsigned int tam; ///< Número de elementos en el árbol.
 
+    /**
+     * @brief Recorrido inorden recursivo interno.
+     * @param p Nodo actual en la recursión.
+     * @param nivel Nivel actual de profundidad.
+     * @param vectorResultado Vector donde se insertan los resultados ordenados.
+     */
     void inorden(NodoAVL<T>* p, int nivel, Vdinamico<T*> &vectorResultado);
 
+    /**
+     * @brief Búsqueda recursiva interna.
+     * @param dato Dato a buscar.
+     * @param p Nodo actual en la recursión.
+     * @return NodoAVL<T>* Puntero al nodo encontrado o 0 si no existe.
+     */
     NodoAVL<T> *buscaClave ( const T &dato, NodoAVL<T> *p);
 
+    /**
+     * @brief Inserción recursiva interna balanceada.
+     * @param c Referencia al puntero del nodo actual.
+     * @param dato Dato a insertar.
+     * @return int Valor que indica si hubo cambio de altura.
+     */
     int insertaDato(NodoAVL<T>* &c, const T &dato);
 
+    /**
+     * @brief Destruye el árbol recursivamente.
+     * @param p Referencia al puntero del nodo a destruir.
+     */
     void destruyeArbol(NodoAVL<T>* &p);
 
+    /**
+     * @brief Rotación simple a la derecha.
+     * @param p Referencia al puntero del nodo desbalanceado.
+     */
     void rotDer(NodoAVL<T>* &p);
+
+    /**
+     * @brief Rotación simple a la izquierda.
+     * @param p Referencia al puntero del nodo desbalanceado.
+     */
     void rotIzq(NodoAVL<T>* &p);
 
+    /**
+     * @brief Copia recursiva de un árbol AVL.
+     * @param q Referencia al puntero del nodo destino.
+     * @param p Puntero al nodo origen.
+     */
     void copiaAvl(NodoAVL<T>* &q, NodoAVL<T> *p);
+
+    /**
+     * @brief Copia recursiva de un árbol AVL (variante 2).
+     * @param p Puntero al nodo origen.
+     * @return NodoAVL<T>* Puntero a la nueva copia del nodo.
+     */
     NodoAVL<T>* copiaAvl2(NodoAVL<T> *p);
 
+    /**
+     * @brief Cuenta los elementos de forma recursiva.
+     * @param p Nodo actual.
+     * @return unsigned int Número de elementos en el subárbol.
+     */
     unsigned int numElementosPr(NodoAVL<T>* p);
 
+    /**
+     * @brief Calcula la altura máxima de forma recursiva.
+     * @param p Nodo actual.
+     * @param nivel Nivel de profundidad actual.
+     * @param result Referencia donde se almacena la altura máxima encontrada.
+     */
     void alturaPr(NodoAVL<T>* p, int nivel, int &result);
+
+    /**
+     * @brief Calcula la altura máxima de forma recursiva (variante 2).
+     * @param p Nodo actual.
+     * @return unsigned int Altura del subárbol.
+     */
     unsigned alturaPr2(NodoAVL<T>* p);
 
 public:
 
+    /**
+     * @brief Constructor por defecto del árbol AVL.
+     */
     Avl() : raiz(0), tam(0) {}
+
+    /**
+     * @brief Constructor de copia.
+     * @param orig Árbol AVL original a copiar.
+     */
     Avl(const Avl<T>& orig);
+
+    /**
+     * @brief Sobrecarga del operador de asignación.
+     * @param orig Árbol AVL a asignar.
+     * @return Avl<T>& Referencia al árbol actual.
+     */
     Avl<T>& operator=(const Avl<T>& orig);
 
+    /**
+     * @brief Busca un dato en el árbol de forma recursiva.
+     * @param dato Dato a buscar.
+     * @return T* Puntero al dato encontrado o 0 si no existe.
+     */
     T* buscaRec (const T &dato);
+
+    /**
+     * @brief Busca un dato en el árbol de forma iterativa.
+     * @param dato Dato a buscar.
+     * @return T* Puntero al dato encontrado o 0 si no existe.
+     */
     T* buscaIt(const T &dato);
+
+    /**
+     * @brief Inserta un dato en el árbol AVL.
+     * @param dato Dato a insertar.
+     * @return bool True si se insertó con éxito, False si el dato ya existía.
+     */
     bool inserta(const T &dato);
 
+    /**
+     * @brief Obtiene el número de elementos en el árbol.
+     * @return unsigned int Cantidad de elementos actuales.
+     */
     unsigned int numElementos();
+
+    /**
+     * @brief Obtiene la altura del árbol.
+     * @return unsigned int Altura máxima del árbol.
+     */
     unsigned int altura();
+
+    /**
+     * @brief Obtiene la altura del árbol (variante 2).
+     * @return unsigned int Altura máxima del árbol.
+     */
     unsigned int altura2();
+
+    /**
+     * @brief Obtiene el valor de la variable de tamaño.
+     * @return unsigned int Tamaño almacenado.
+     */
     unsigned int getTam(){ return tam;};
 
+    /**
+     * @brief Destructor del árbol AVL. Libera todos los nodos.
+     */
     ~Avl(){
         destruyeArbol(raiz);
     };
 
+    /**
+     * @brief Realiza un recorrido Inorden del árbol devolviendo sus elementos.
+     * @return Vdinamico<T*> Vector con los punteros a los datos ordenados.
+     */
     Vdinamico<T*> recorreInorden() {
         Vdinamico<T*> vectorResultado;
         inorden(raiz, 0, vectorResultado);
         return vectorResultado;
     };
 };
+
     template<class T>
     void Avl<T>::copiaAvl(NodoAVL<T>* &q,NodoAVL<T> *p){
         if (p){

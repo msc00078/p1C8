@@ -1,0 +1,8 @@
+<map id="ListaEnlazada&lt; T &gt;::Iterador&lt; U &gt;" name="ListaEnlazada&lt; T &gt;::Iterador&lt; U &gt;">
+<area shape="rect" id="Node000001" title="Permite recorrer los nodos de la ListaEnlazada secuencialmente." alt="" coords="5,203,140,245"/>
+<area shape="rect" id="Node000002" href="$class_nodo_l.html" title=" " alt="" coords="26,104,119,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,144,75,203,70,202,70,148"/>
+<area shape="rect" id="Node000003" href="$class_nodo_l.html" title="Representa un nodo para la clase ListaEnlazada. Almacena el dato genérico y un puntero al siguiente e..." alt="" coords="27,5,118,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,45,75,104,70,103,72,50"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="132,9,144,19,136,28,119,30,116,26,134,23,139,19,133,14"/>
+</map>

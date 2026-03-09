@@ -1,71 +1,210 @@
+/**
+ * @file ListaEnlazada.h
+ * @author Asistente de Calidad (assistant@domain.com)
+ * @brief Declaración e implementación de una Lista Enlazada Simple genérica.
+ * @version 0.1
+ * @date 2026-03-09
+ * * @copyright Copyright (c) 2026
+ */
 #ifndef LISTAS_H_INCLUDED
 #define LISTAS_H_INCLUDED
 
 using namespace std;
 #include <iostream>
 
+/**
+ * @class NodoL
+ * @brief Representa un nodo para la clase ListaEnlazada.
+ * Almacena el dato genérico y un puntero al siguiente elemento.
+ */
 template<class T>
 class NodoL {
 
 public:
-    T dato;
-    NodoL *sig;
+    T dato;       ///< Información almacenada en el nodo.
+    NodoL *sig;   ///< Puntero al siguiente nodo de la lista.
+
+    /**
+     * @brief Constructor del nodo de la lista.
+     * @param aDato Dato a almacenar.
+     * @param aSig Puntero al siguiente nodo.
+     */
     NodoL(const T &aDato, NodoL *aSig = 0):dato(aDato), sig(aSig) {}
+
+    /**
+     * @brief Destructor del nodo de la lista.
+     */
     ~NodoL() {}
 };
 
+/**
+ * @class ListaEnlazada
+ * @brief Estructura de datos dinámica tipo Lista Simplemente Enlazada.
+ * Permite insertar, borrar y recorrer elementos secuencialmente mediante un iterador.
+ */
 template<class T>
 class ListaEnlazada {
 
 //declaracion del Nodo local
 
-    NodoL<T> *cabecera, *cola;
-    unsigned tama;
+    NodoL<T> *cabecera;  ///< Puntero al primer elemento de la lista.
+    NodoL<T> *cola;      ///< Puntero al último elemento de la lista.
+    unsigned tama;       ///< Número de elementos actualmente en la lista.
 
 public:
 
-    //IMPLEMENTACION DEL ITERADOR
+    /**
+     * @class Iterador
+     * @brief Permite recorrer los nodos de la ListaEnlazada secuencialmente.
+     */
     template <class U>
     class Iterador {
-        NodoL<U> *nodo;
+        NodoL<U> *nodo; ///< Puntero al nodo actual en la iteración.
     public:
         friend class ListaEnlazada<U>;
 
+        /**
+         * @brief Constructor del iterador.
+         * @param aNodo Nodo inicial.
+         */
         Iterador(NodoL<U> *aNodo=0) : nodo(aNodo) {}
 
+        /**
+         * @brief Verifica si se ha alcanzado el final de la lista.
+         * @return bool True si ha terminado, False si hay más elementos.
+         */
         bool fin() { return nodo == 0; }
 
+        /**
+         * @brief Avanza el iterador al siguiente nodo.
+         */
         void siguiente() {
             nodo = nodo->sig;
         }
         // Nodo<T> *vernodo() { return nodo; }
+
+        /**
+         * @brief Obtiene el dato almacenado en el nodo actual del iterador.
+         * @return T& Referencia al dato.
+         */
         T &dato() { return nodo->dato; }
+
+        /**
+         * @brief Destructor del iterador.
+         */
         ~Iterador() {}
     };
 
+    /**
+     * @brief Constructor por defecto de la lista enlazada.
+     */
     ListaEnlazada() : cabecera(0), cola(0), tama(0) {}
+
+    /**
+     * @brief Destructor de la lista enlazada.
+     */
     ~ListaEnlazada();
+
+    /**
+     * @brief Constructor de copia.
+     * @param l Lista original a copiar.
+     */
     ListaEnlazada(const ListaEnlazada<T> &l);
+
+    /**
+     * @brief Sobrecarga del operador de asignación.
+     * @param l Lista a asignar.
+     * @return ListaEnlazada& Referencia a la lista actual.
+     */
     ListaEnlazada &operator=(const ListaEnlazada<T> &l);
+
+    /**
+     * @brief Devuelve un iterador apuntando al inicio de la lista.
+     * @return Iterador<T> Iterador inicializado en la cabecera.
+     */
     Iterador<T> iterador() const;
+
+    /**
+     * @brief Inserta un dato al principio de la lista.
+     * @param dato Dato a insertar.
+     */
     void insertarInicio(const T &dato);
+
+    /**
+     * @brief Inserta un dato al final de la lista.
+     * @param dato Dato a insertar.
+     */
     void insertarFin(const T &dato);
+
+    /**
+     * @brief Inserta un dato justo delante del nodo apuntado por el iterador.
+     * @param p Iterador indicando la posición.
+     * @param dato Dato a insertar.
+     */
     void insertaDelante(Iterador<T> &p, const T &dato);
+
+    /**
+     * @brief Inserta un dato justo detrás del nodo apuntado por el iterador.
+     * @param p Iterador indicando la posición.
+     * @param dato Dato a insertar.
+     */
     void insertaDetras( Iterador<T> &p, const T &dato);
+
+    /**
+     * @brief Borra el primer elemento de la lista.
+     */
     void borrarInicio();
+
+    /**
+     * @brief Borra el último elemento de la lista.
+     */
     void borrarFinal();
+
+    /**
+     * @brief Borra el nodo apuntado por el iterador.
+     * @param i Iterador apuntando al nodo a borrar.
+     */
     void borra(Iterador<T> &i);
+
+    /**
+     * @brief Devuelve el número de elementos de la lista.
+     * @return int Tamaño actual.
+     */
     int tam(){ return tama;}
+
+    /**
+     * @brief Elimina todos los elementos de la lista liberando su memoria.
+     */
     void destruyeLista();  //puede/debe ir en private
 
+    /**
+     * @brief Concatena otra lista al final de la actual devolviendo una nueva lista.
+     * @param l Lista a concatenar.
+     * @return ListaEnlazada<T> Nueva lista resultante.
+     */
     ListaEnlazada<T> concatena(const ListaEnlazada<T> &l);
+
+    /**
+     * @brief Sobrecarga del operador suma para concatenar listas.
+     * @param l Lista a concatenar.
+     * @return ListaEnlazada<T> Nueva lista resultante.
+     */
     ListaEnlazada<T> operator+(const ListaEnlazada<T> &l);
 
+    /**
+     * @brief Obtiene una referencia al dato del primer nodo.
+     * @return T& Referencia al primer dato.
+     */
     T &inicio(){
         if (!cabecera)
             throw std::invalid_argument("No existe ese elemento");
         return cabecera->dato;
     };
+
+    /**
+     * @brief Obtiene una referencia al dato del último nodo.
+     * @return T& Referencia al último dato.
+     */
     T &fin(){
         if (!cola)
             throw std::invalid_argument("No existe ese elemento");
@@ -74,8 +213,8 @@ public:
 };
 
 template<class T>
-ListaEnlazada<T>::Iterador<T> ListaEnlazada<T>::iterador() const{
-    return Iterador (cabecera);
+typename ListaEnlazada<T>::template Iterador<T> ListaEnlazada<T>::iterador() const{
+    return Iterador<T> (cabecera);
 }
 
 //CONSTRUCTOR DE COPIA

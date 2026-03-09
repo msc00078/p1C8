@@ -1,0 +1,28 @@
+var class_medi_express =
+[
+    [ "MediExpress", "class_medi_express.html#a459f195a308fec7b9690adefe7d6a8e1", null ],
+    [ "MediExpress", "class_medi_express.html#a40c7c1f01ea251152feaa42bab86d198", null ],
+    [ "MediExpress", "class_medi_express.html#a459f195a308fec7b9690adefe7d6a8e1", null ],
+    [ "MediExpress", "class_medi_express.html#a40c7c1f01ea251152feaa42bab86d198", null ],
+    [ "buscarCompuesto", "class_medi_express.html#acaf09fecade67b6aeab49436180d3dc9", null ],
+    [ "buscarCompuesto", "class_medi_express.html#acaf09fecade67b6aeab49436180d3dc9", null ],
+    [ "buscarCompuesto", "class_medi_express.html#a73dcf25c03801dcaae9fe73d6679b2bf", null ],
+    [ "buscarCompuesto", "class_medi_express.html#a73dcf25c03801dcaae9fe73d6679b2bf", null ],
+    [ "buscarFarmacia", "class_medi_express.html#ae718bb2602abf71edbd46de6d3055734", null ],
+    [ "buscarFarmacia", "class_medi_express.html#ae718bb2602abf71edbd46de6d3055734", null ],
+    [ "buscarLab", "class_medi_express.html#ae53a1f9a972163c36ab02b0c97f227ef", null ],
+    [ "buscarLab", "class_medi_express.html#ae53a1f9a972163c36ab02b0c97f227ef", null ],
+    [ "buscarLabCiudad", "class_medi_express.html#a62ee0071bd80a8a5acb39189b076ed47", null ],
+    [ "buscarLabCiudad", "class_medi_express.html#a62ee0071bd80a8a5acb39189b076ed47", null ],
+    [ "buscarLabs", "class_medi_express.html#a975838488f6cccfeec3335439141d2fb", null ],
+    [ "buscarLabs", "class_medi_express.html#a975838488f6cccfeec3335439141d2fb", null ],
+    [ "getMedicamentoSinLab", "class_medi_express.html#a6a6f71ea4be32275fa1028c1ac636be7", null ],
+    [ "getMedicamentoSinLab", "class_medi_express.html#a6a6f71ea4be32275fa1028c1ac636be7", null ],
+    [ "suministrarFarmacia", "class_medi_express.html#a034ae0250bc91fefbea0d8449dd38ab8", null ],
+    [ "suministrarFarmacia", "class_medi_express.html#a034ae0250bc91fefbea0d8449dd38ab8", null ],
+    [ "suministrarMed", "class_medi_express.html#a2c7d420b893b643189119b8ce746a304", null ],
+    [ "suministrarMed", "class_medi_express.html#a2c7d420b893b643189119b8ce746a304", null ],
+    [ "labs", "class_medi_express.html#ae189ace64580f39d97d8959cfd97d299", null ],
+    [ "medication", "class_medi_express.html#aa72a20f38a8e687fd17d872893aef840", null ],
+    [ "pharmacy", "class_medi_express.html#a9663fdb6acf27572229088255bb90cda", null ]
+];

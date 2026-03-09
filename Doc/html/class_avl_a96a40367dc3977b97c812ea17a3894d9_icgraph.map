@@ -1,0 +1,14 @@
+<map id="Avl::buscaClave" name="Avl::buscaClave">
+<area shape="rect" id="Node000001" title="Búsqueda recursiva interna." alt="" coords="556,81,673,108"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="640,65,632,62,614,60,598,62,589,67,587,72,591,82,587,80,582,73,585,63,596,57,614,55,634,57,645,67"/>
+<area shape="rect" id="Node000002" href="$class_avl.html#a1dfa4f390c92f3e101fe809474302504" title="Busca un dato en el árbol de forma recursiva." alt="" coords="400,81,508,108"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="537,95,508,97,508,92,543,95"/>
+<area shape="rect" id="Node000003" href="$class_avl.html#a414ca02ffb09a684a45186e34503b74c" title="Inserta un dato en el árbol AVL." alt="" coords="265,56,352,83"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="382,83,353,80,353,74,388,83"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Función principal del programa. Realiza pruebas de rendimiento comparando estructuras de datos y veri..." alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="382,97,265,97,147,87,55,75,55,70,147,82,265,92,387,96"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a72969745d7ba103af28ffcf75785d3bc" title="Carga los datos de farmacias desde un archivo CSV. Inserta los datos leídos tanto en un Árbol AVL com..." alt="" coords="103,5,217,32"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="250,51,201,35,202,30,255,50"/>
+<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="249,72,55,72,55,67,250,67"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="108,40,56,62,54,57,111,36"/>
+</map>

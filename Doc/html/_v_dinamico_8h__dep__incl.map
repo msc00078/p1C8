@@ -1,0 +1,25 @@
+<map id="VDinamico.h" name="VDinamico.h">
+<area shape="rect" id="Node000001" title="Declaración e implementación de la plantilla de clase Vdinamico." alt="" coords="166,5,262,32"/>
+<area shape="rect" id="Node000002" href="$_avl_8h.html" title="Declaración e implementación de un Árbol AVL genérico." alt="" coords="336,80,388,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,37,338,79,333,80,253,42"/>
+<area shape="rect" id="Node000003" href="$_medi_express_8cpp.html" title=" " alt="" coords="78,155,200,181"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="183,44,170,61,156,81,144,120,141,155,136,153,139,119,151,79,166,58,187,40"/>
+<area shape="rect" id="Node000004" href="$_medi_express_8h.html" title="Declaración de la clase MediExpress." alt="" coords="225,155,333,181"/>
+<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="244,39,263,58,276,79,283,99,285,120,283,156,279,153,280,120,277,100,271,81,258,61,243,45"/>
+<area shape="rect" id="Node000007" href="$_farmacia_8h.html" title="Declaración de la clase Farmacia." alt="" coords="5,80,92,107"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="170,41,79,82,76,77,172,36"/>
+<area shape="rect" id="Node000008" href="$_laboratorio_8h.html" title="Declaración de la clase Laboratorio." alt="" coords="166,80,262,107"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="215,45,216,81,211,79,213,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="319,109,179,157,177,152,323,106"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="338,116,295,157,292,152,334,118"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title="Archivo principal que ejecuta y prueba las estructuras de datos (AVL, Vdinamico) y MediExpress." alt="" coords="287,229,362,256"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="360,121,348,182,331,231,328,227,343,181,356,124"/>
+<area shape="rect" id="Node000005" href="$_farmacia_8cpp.html" title=" " alt="" coords="100,229,200,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="246,189,174,231,171,226,241,190"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="297,193,319,230,314,228,294,197"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="76,114,126,153,121,155,75,119"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="103,109,241,152,237,156,103,114"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="49,120,56,151,68,180,94,207,125,228,120,229,91,211,64,183,51,153,48,125"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="192,116,154,156,150,152,188,119"/>
+<area shape="poly" id="edge13_Node000008_Node000004" title=" " alt="" coords="236,116,271,154,265,154,234,121"/>
+</map>

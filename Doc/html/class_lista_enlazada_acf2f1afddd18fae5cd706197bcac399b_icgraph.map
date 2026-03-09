@@ -1,0 +1,5 @@
+<map id="ListaEnlazada::destruyeLista" name="ListaEnlazada::destruyeLista">
+<area shape="rect" id="Node000001" title="Elimina todos los elementos de la lista liberando su memoria." alt="" coords="255,5,444,32"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#a0986ced28b722a53eed0da936a2ab8ae" title="Destructor de la lista enlazada." alt="" coords="5,5,207,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,19,207,21,207,16,242,19"/>
+</map>

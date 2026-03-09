@@ -1,0 +1,8 @@
+<map id="Avl::destruyeArbol" name="Avl::destruyeArbol">
+<area shape="rect" id="Node000001" title="Destruye el árbol recursivamente." alt="" coords="157,31,285,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="247,15,239,12,221,9,204,11,195,16,193,21,197,31,192,29,188,22,191,12,202,6,221,4,241,7,252,16"/>
+<area shape="rect" id="Node000002" href="$class_avl.html#ad74849f34e3139eec03fc244bc94f663" title="Sobrecarga del operador de asignación." alt="" coords="5,5,109,32"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="139,32,109,29,109,24,144,31"/>
+<area shape="rect" id="Node000003" href="$class_avl.html#ad802492110a9ee1f6f72e1132a30247f" title="Destructor del árbol AVL. Libera todos los nodos." alt="" coords="19,56,95,83"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="139,57,95,66,94,61,144,56"/>
+</map>

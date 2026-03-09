@@ -1,0 +1,5 @@
+<map id="ListaEnlazada::concatena" name="ListaEnlazada::concatena">
+<area shape="rect" id="Node000001" title="Concatena otra lista al final de la actual devolviendo una nueva lista." alt="" coords="220,5,391,32"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#a509e04ed71d1195465c98cab4e2cd51a" title="Sobrecarga del operador suma para concatenar listas." alt="" coords="5,5,172,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,19,172,21,172,16,207,19"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="ListaEnlazada::operator+" name="ListaEnlazada::operator+">
+<area shape="rect" id="Node000001" title="Sobrecarga del operador suma para concatenar listas." alt="" coords="5,31,172,57"/>
+<area shape="rect" id="Node000002" href="$class_lista_enlazada.html#ad656434c2dea01946b17183aaee5e3e9" title="Concatena otra lista al final de la actual devolviendo una nueva lista." alt="" coords="220,5,391,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,32,207,30,201,31,172,37"/>
+<area shape="rect" id="Node000003" href="$class_lista_enlazada.html#a203cabce8f626d08e94bae50d2654d1b" title="Constructor por defecto de la lista enlazada." alt="" coords="439,31,632,57"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="172,41,423,41,423,47,172,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,25,426,32,421,32,391,31"/>
+</map>
